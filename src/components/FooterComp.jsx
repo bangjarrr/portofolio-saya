@@ -21,10 +21,10 @@ const FaqComp = () => {
                                 <a href="#about" className="text-warning">About</a>
                             </li>
                             <li>
-                                <a href="#gallery" className="text-warning" target="_blank">Gallery</a>
+                                <a href="#gallery" className="text-warning" >Gallery</a>
                             </li>
                             <li>
-                                <a href="#contact" className="text-warning" target="_blank">Contact</a>
+                                <a href="#contact" className="text-warning">Contact</a>
                             </li>
                         </ul>
                     </Col>
