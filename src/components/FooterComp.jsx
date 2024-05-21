@@ -32,32 +32,32 @@ const FaqComp = () => {
                         <h5>Social Media</h5>
                         <ul className="list-unstyled d-flex justify-content-between align-items-center mt-5 ml-0">
                             <li>
-                                <a href="">
+                                <a href="#">
                                     <i data-feather="instagram" color="#fff"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="#">
                                     <i data-feather="facebook" color="#fff"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="#">
                                     <i data-feather="message-square" color="#fff"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="#">
                                     <i data-feather="twitter" color="#fff"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="#">
                                     <i data-feather="linkedin" color="#fff"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="#">
                                     <i data-feather="youtube" color="#fff"></i>
                                 </a>
                             </li>
