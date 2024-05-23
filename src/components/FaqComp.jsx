@@ -76,13 +76,14 @@ const FaqComp = () => {
 
     return (
         <div className="w-body" id="contact">
-            <Container className="pt-5 pb-5">
+            <Container className="pb-5">
                 <Row>
-                    <Col>
+                    <Col className="pb-5 mb-5">
                         <h1 className="text-center text-warning">Contact Me</h1>
+                        <div className="border-bottom"></div>
                     </Col>
                 </Row>
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center mb-5 pb-5">
                     <Form ref={formRef} className="text-white w-50" onSubmit={sendToEmail} id="my-form">
                         <Form.Group className="mb-3" controlId="formNama">
                             <Form.Label>Name</Form.Label>

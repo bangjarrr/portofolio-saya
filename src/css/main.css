@@ -19,7 +19,7 @@ hr {
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
-    background: rgb(31, 31, 31);
+    background: rgb(183, 0, 255);
 }
 
 .navbar.color-active {
@@ -45,12 +45,14 @@ hr {
 
 .skills-img {
     width: 60%;
-    background: #8b8b8b;
+    background: #303030;
     cursor: pointer;
 }
 
 .skills-img:hover {
-    box-shadow: 0px 0px 20px #fff;
+    box-shadow: 0px 0px 20px #00c3ff,
+                0px 0px 50px #fff
+    ;
 }
 
 .project {
@@ -65,7 +67,7 @@ hr {
 }
 
 .w-body {
-    background: #303030;
+    background: #202020;
 }
 
 .hero {
@@ -73,7 +75,7 @@ hr {
     background-position: center;
     background-repeat: no-repeat;
     padding-top: 100px;
-    background: #303030;
+    background: #202020;
 }
 
 .hero h1 {
