@@ -43,7 +43,7 @@ const FaqComp = () => {
                 return;
             }
 
-            const response = await emailjs.send('portofolio', 'portofolio', {
+            emailjs.send('portofolio', 'portofolio', {
                 email: email,
                 nama: nama,
                 pesan: pesan,
