@@ -2,15 +2,17 @@ import React, { useRef, useState } from "react";
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import emailjs from 'emailjs-com';
-import ReCAPTCHA from "react-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const FaqComp = () => {
     const formRef = useRef(null);
     const [isVerified, setIsVerified] = useState(false);
+    const [recaptchaToken, setRecaptchaToken] = useState("");
 
-    const verifyCallback = (response) => {
-        if (response) {
+    const onChange = (value) => {
+        if (value) {
             setIsVerified(true);
+            setRecaptchaToken(value);
         }
     };
 
@@ -27,7 +29,7 @@ const FaqComp = () => {
         }
 
         try {
-            emailjs.init('Ayx-Zj0F9khkixi_W');
+            emailjs.init('mU8eRB0v5jnQgLrVc');
             const nama = formRef.current.elements['nama'].value;
             const email = formRef.current.elements['email'].value;
             const pesan = formRef.current.elements['pesan'].value;
@@ -41,21 +43,26 @@ const FaqComp = () => {
                 return;
             }
 
-            const response = await emailjs.send("portofolio", "portofolio", {
+            const response = await emailjs.send('portofolio', 'portofolio', {
                 email: email,
                 nama: nama,
                 pesan: pesan,
+                'g-recaptcha-response': recaptchaToken,
             });
-
-            console.log(response);
 
             Swal.fire({
                 icon: "success",
                 title: "Berhasil",
                 text: "Email berhasil dikirim!",
                 confirmButtonText: "Tutup",
-            });
-            formRef.current.reset();
+            }).then((r)=> {
+                if (r.isConfirmed) {
+                    formRef.current.reset();
+                    window.location.reload();
+                } else {
+                    window.location.reload();
+                }
+            })
 
         } catch (error) {
             Swal.fire({
@@ -94,8 +101,7 @@ const FaqComp = () => {
 
                         <ReCAPTCHA
                             sitekey="6LdZ_NgpAAAAAB0dvSXNsonB5uAGCTqdMWI_5I-k"
-                            render="onload"
-                            verifyCallback={verifyCallback}
+                            onChange={onChange}
                         />
 
                         <Button variant="success" type="submit">
