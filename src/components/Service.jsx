@@ -35,7 +35,7 @@ const About = () => {
                             in the world of programming, especially web programming. I actively
                             participate in training, teaching, and learning communities. I
                             also managed to get a competency certificate
-                            <a href="#" className="text-warning"> show my certificate</a>. To get to know me better, you
+                            <a href="https://bangjarrr.github.io/certificate/" className="text-warning"> show my certificate</a>. To get to know me better, you
                             can connect on my <a href="https://t.me/Njir_18" target="_blank" rel="noreferrer" className="text-warning">Telegram</a> or you can also contact me via this page <a href="#contact" className="text-warning">Contact</a>
                         </p>
                     </Col>
@@ -48,7 +48,7 @@ const About = () => {
                 <Row className="justify-content-center">
                     <Col md={8} className="text-start mt-5" data-aos="fade-down">
                         <p>
-                            <a href="https://bangjarrr.github.io" className="text-warning" rel="noreferrer" target="_blank">Fajar Pages</a> is a website created in December 2023. I made this website as a personal record of what I have done, be it my project or other things.
+                            Fajar Pages is a website created in December 2023. I made this website as a personal record of what I have done, be it my project or other things.
                             Hopefully this website can be useful for all of you; Hopefully we can work together to advance this beloved country through programming or other things related to technology.
                             I personally apologize profusely if there are any mistakes, because I am also still in the learning stage.
                         </p>

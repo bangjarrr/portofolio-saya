@@ -32,32 +32,37 @@ const FaqComp = () => {
                         <h5>Social Media</h5>
                         <ul className="list-unstyled d-flex justify-content-between align-items-center mt-5 ml-0">
                             <li>
-                                <a href="#">
+                                <a href="https://github.com/alfajarjaya">
+                                    <i data-feather="github" color="#fff"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/bang_jarrrz/">
                                     <i data-feather="instagram" color="#fff"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="https://www.facebook.com/alfajjar.alfajjar.90?mibextid=9R9pXO">
                                     <i data-feather="facebook" color="#fff"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="https://t.me/Njir_18">
                                     <i data-feather="message-square" color="#fff"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="https://x.com/PutraSnjaya?t=z39qpVDJ1jPKyHjnOZqMTQ&s=09">
                                     <i data-feather="twitter" color="#fff"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="https://www.linkedin.com/in/alfajjar-putra-4a2a83290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
                                     <i data-feather="linkedin" color="#fff"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="https://www.youtube.com/@AlfajjarSyachputra">
                                     <i data-feather="youtube" color="#fff"></i>
                                 </a>
                             </li>
