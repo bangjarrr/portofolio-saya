@@ -23,9 +23,9 @@ const About = () => {
 
     const toCertificate = () => {
         Swal.fire({
-            title: 'Soon',
+            title: 'Ups !',
+            text: "The page is under construction",
             icon: 'info',
-            timer: 2000
         });
     }
 
