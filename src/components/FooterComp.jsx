@@ -72,7 +72,7 @@ const FaqComp = () => {
                 <hr />
                 <Row>
                     <Col className="text-center">
-                        <p>&copy; 2024 Alfajjar. All rights reserved.</p>
+                        <p>&copy; 2023 Alfajjar. All rights reserved.</p>
                     </Col>
                 </Row>
             </Container>

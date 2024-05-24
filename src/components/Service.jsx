@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import AOS from "aos";
+import Swal from "sweetalert2";
 import '../../node_modules/aos/dist/aos.css';
 import '../css/main.css';
 
 const importAll = (r) => r.keys().map(r);
 let images = importAll(require.context('../assets/img/skills/', false, /\.(png|jpe?g|svg)$/));
-let skills = ["HTML", "CSS", "JavaScript", "Python", "My SQL"];
+let skills = ["HTML", "CSS", "JavaScript", "Python", "MySQL"];
 
 const About = () => {
     const [showAll, setShowAll] = useState(false);
@@ -19,6 +20,14 @@ const About = () => {
         AOS.init();
         AOS.refresh();
     }, []);
+
+    const toCertificate = () => {
+        Swal.fire({
+            title: 'Soon',
+            icon: 'info',
+            timer: 2000
+        });
+    }
 
     return (
         <div className="d-flex flex-column min-vh-100 justify-content-center w-body text-white" id="about">
@@ -37,7 +46,7 @@ const About = () => {
                             in the world of programming, especially web programming. I actively
                             participate in training, teaching, and learning communities. I
                             also managed to get a competency certificate
-                            <a href="https://bangjarrr.github.io/certificate/" className="text-warning"> show my certificate</a>. To get to know me better, you
+                            <button className="text-warning bg-transparent border-0" onClick={toCertificate}> show my certificate</button>. To get to know me better, you
                             can connect on my <a href="https://t.me/Njir_18" target="_blank" rel="noreferrer" className="text-warning">Telegram</a> or you can also contact me via this page <a href="#contact" className="text-warning">Contact</a>
                         </p>
                     </Col>
@@ -50,7 +59,7 @@ const About = () => {
                 <Row className="justify-content-center">
                     <Col md={8} className="text-start mt-5" data-aos="fade-down">
                         <p>
-                            Fajar Pages is a website created in December 2023. I made this website as a personal record of what I have done, be it my project or other things.
+                            <span className="border-bottom text-warning">Fajar Pages</span> is a website created in December 2023. I made this website as a personal record of what I have done, be it my project or other things.
                             Hopefully this website can be useful for all of you; Hopefully we can work together to advance this beloved country through programming or other things related to technology.
                             I personally apologize profusely if there are any mistakes, because I am also still in the learning stage.
                         </p>
@@ -72,7 +81,9 @@ const About = () => {
                                     className="img-fluid skills-img py-3"
                                 />
                                 <div className="overlay">
-                                    <div className="text text-warning">{skills[index]}</div>
+                                    <div className="text text-warning">
+                                        <h3>{skills[index]}</h3>
+                                    </div>
                                 </div>
                             </div>
                         </Col>

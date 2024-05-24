@@ -27,14 +27,14 @@ const HeroComp = () => {
                             Just a Student's.
                         </p>
                         <Button
-                            variant="primary"
+                            variant="warning"
                             size="lg"
                             className="me-2"
                             onClick={() => scrollToSection('about')}
                             data-aos="fade-up"
                             data-aos-delay="100"
                         >
-                            Learn More
+                            Let's Explore
                         </Button>
                         <Button
                             variant="outline-light"
