@@ -1,11 +1,18 @@
-import React, {useEffect} from "react";
-import { Container, Row, Col} from "react-bootstrap";
+import React, { useEffect } from "react";
+import { Container, Row, Col , Button} from "react-bootstrap";
 import feather from 'feather-icons';
 
 const FaqComp = () => {
     useEffect(() => {
         feather.replace()
     }, []);
+    const scrollY = (id) => {
+        const section = document.getElementById(id);
+
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
         <footer className="bg-dark text-white">
@@ -15,16 +22,40 @@ const FaqComp = () => {
                         <h5>About Fajar Pages</h5>
                         <ul className="list-unstyled">
                             <li>
-                                <a href="#home" className="text-warning">Home</a>
+                                <Button
+                                    className="mx-2 border-0"
+                                    variant="outline-warning"
+                                    onClick={() => scrollY("home")}
+                                >
+                                    Home
+                                </Button>
                             </li>
                             <li>
-                                <a href="#about" className="text-warning">About</a>
+                                <Button
+                                    className="mx-2 border-0"
+                                    variant="outline-warning"
+                                    onClick={() => scrollY("about")}
+                                >
+                                    About
+                                </Button>
                             </li>
                             <li>
-                                <a href="#gallery" className="text-warning" >Gallery</a>
+                                <Button
+                                    className="mx-2 border-0"
+                                    variant="outline-warning"
+                                    onClick={() => scrollY("gallery")}
+                                >
+                                    Gallery
+                                </Button>
                             </li>
                             <li>
-                                <a href="#contact" className="text-warning">Contact</a>
+                                <Button
+                                    className="mx-2 border-0"
+                                    variant="outline-warning"
+                                    onClick={() => scrollY("contact")}
+                                >
+                                    Contact
+                                </Button>
                             </li>
                         </ul>
                     </Col>

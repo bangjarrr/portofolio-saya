@@ -44,39 +44,18 @@ hr {
 }
 
 .skills-img {
-    width: 80%;
-}
-
-.skill-img-container {
     background: #303030;
     width: 80%;
     padding: 0;
     margin: 0;
+    cursor: pointer;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.skill-img-container:hover .overlay {
+.skills-img:hover {
     opacity: 1;
-    box-shadow: 0px 0px 20px #00c3ff,
-        0px 0px 50px #fff;
-    background: rgb(0, 0, 0, 0.9);
+    box-shadow: 0px 0px 20px #cc00ff,
+        0px 0px 20px #fff;
+    background: rgba(10, 10, 10, 0.1);
     cursor: pointer;
 }
 
@@ -88,8 +67,17 @@ hr {
     margin: 20px 0px;
 }
 
-.project p {
-    margin-left: 20px;
+.project iframe, img {
+    height: 315px;
+}
+
+.project-link {
+    background: #202020;
+}
+
+.project-link:hover {
+    background: #505050;
+    color: #000;
 }
 
 .w-body {

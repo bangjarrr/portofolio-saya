@@ -55,7 +55,7 @@ const FaqComp = () => {
                 title: "Berhasil",
                 text: "Email berhasil dikirim!",
                 confirmButtonText: "Tutup",
-            }).then((r)=> {
+            }).then((r) => {
                 if (r.isConfirmed) {
                     formRef.current.reset();
                     window.location.reload();
@@ -75,42 +75,45 @@ const FaqComp = () => {
     };
 
     return (
-        <div className="w-body" id="contact">
-            <Container className="pb-5">
-                <Row>
-                    <Col className="pb-5 mb-5">
-                        <h1 className="text-center text-warning">Contact Me</h1>
-                        <div className="border-bottom"></div>
-                    </Col>
-                </Row>
-                <div className="d-flex justify-content-center mb-5 pb-5">
-                    <Form ref={formRef} className="text-white w-50" onSubmit={sendToEmail} id="my-form">
-                        <Form.Group className="mb-3" controlId="formNama">
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control type="text" placeholder="Enter name" name="nama" id="nama" />
-                        </Form.Group>
+        <div className="d-flex flex-column min-vh-100 justify-content-center w-body text-white" id="contact">
+            <div className="mt-5">
+                <Container className="pb-5">
+                    <Row>
+                        <Col className="pb-5 mb-5">
+                            <h1 className="text-center text-warning">Contact Me</h1>
+                            <div className="border-bottom"></div>
+                        </Col>
+                    </Row>
+                    <div className="d-flex justify-content-center mb-5 pb-5 w-100">
+                        <Form ref={formRef} className="text-white w-100" onSubmit={sendToEmail} id="my-form">
+                            <Form.Group className="mb-3" controlId="formNama">
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control type="text" placeholder="Enter name" name="nama" id="nama" />
+                            </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" name="email" id="email" />
-                        </Form.Group>
+                            <Form.Group className="mb-3" controlId="formEmail">
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control type="email" placeholder="Enter email" name="email" id="email" />
+                            </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formPesan">
-                            <Form.Label>Message</Form.Label>
-                            <Form.Control type="text" placeholder="Enter message" name="pesan" id="pesan" />
-                        </Form.Group>
+                            <Form.Group className="mb-3" controlId="formPesan">
+                                <Form.Label>Message</Form.Label>
+                                <Form.Control as="textarea" rows={3} placeholder="Enter message" name="pesan" id="pesan" />
+                            </Form.Group>
 
-                        <ReCAPTCHA
-                            sitekey="6LdZ_NgpAAAAAB0dvSXNsonB5uAGCTqdMWI_5I-k"
-                            onChange={onChange}
-                        />
 
-                        <Button variant="success" type="submit">
-                            Send
-                        </Button>
-                    </Form>
-                </div>
-            </Container>
+                            <ReCAPTCHA
+                                sitekey="6LdZ_NgpAAAAAB0dvSXNsonB5uAGCTqdMWI_5I-k"
+                                onChange={onChange}
+                            />
+
+                            <Button variant="success" type="submit">
+                                Send
+                            </Button>
+                        </Form>
+                    </div>
+                </Container>
+            </div>
         </div>
     );
 }

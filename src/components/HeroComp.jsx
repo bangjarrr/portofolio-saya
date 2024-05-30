@@ -23,9 +23,9 @@ const HeroComp = () => {
                     <Col>
                         <h1 className="display-3 text-white text-bold mb-4" data-aos="fade-left">
                             <u>Hi, I'm Fajar</u></h1>
-                        <p className="lead text-white-75 mb-4 text-warning" data-aos="fade-right">
+                        <h2 className="lead text-white-75 mb-4 text-warning" data-aos="fade-right">
                             Just a Student's.
-                        </p>
+                        </h2>
                         <Button
                             variant="warning"
                             size="lg"
