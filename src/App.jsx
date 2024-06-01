@@ -16,11 +16,10 @@ function App() {
       <NavbarComp />
       <Service />
       <GalleryComp />
-      <FaqComp />
-
       {/* Content */}
 
 
+      <FaqComp />
       <FooterComp />
 
     </div>
