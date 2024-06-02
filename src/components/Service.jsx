@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import '../../node_modules/aos/dist/aos.css';
 import '../css/main.css';
 import websiteKelas from '../assets/img/project/kelas.png';
+import qrCodeImg from '../assets/img/project/qrcode.png';
 
 const importAll = (r) => r.keys().map(r);
 let images = importAll(require.context('../assets/img/skills/', false, /\.(png|jpe?g|svg)$/));
@@ -129,6 +130,15 @@ const About = () => {
                                         <div className="mx-3 my-2">
                                             <p>Membangun website kelas yang berfungsi sebagai pusat gallery beserta kenagan bagi teman-teman, berisikan tentang gallery class, blog, dll.</p>
                                             <a href="https://tkj2skanesa.vercel.app" target="_blank" rel="noreferrer" className="text-warning text-decoration-none w-100 p-2 project-link d-block text-center rounded-3">Show Demo</a>
+                                        </div>
+                                    </div>
+                                </Col>
+                                <Col md={6}>
+                                    <div className="project rounded-3">
+                                        <img src={qrCodeImg} alt="https://tkj2skanesa.vercel.app" width={'100%'} height={315} className="img-fluid rounded-3" />
+                                        <div className="mx-3 my-2">
+                                            <p>This project is a simple application to generate QR (Quick Response) codes from user-inputted text. QR Code is a type of two-dimensional barcode that can be quickly read by devices such as smartphone cameras..</p>
+                                            <a href="https://qrcodegeneratorbyfajar.vercel.app/" target="_blank" rel="noreferrer" className="text-warning text-decoration-none w-100 p-2 project-link d-block text-center rounded-3">Show Demo</a>
                                         </div>
                                     </div>
                                 </Col>
