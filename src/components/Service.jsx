@@ -13,6 +13,13 @@ let images = importAll(require.context('../assets/img/skills/', false, /\.(png|j
 const About = () => {
     const [showAll, setShowAll] = useState(false);
 
+    const scrollY = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior:'smooth' });
+        }
+    }
+
     const toggleShowAll = () => {
         setShowAll(!showAll);
     }
@@ -49,7 +56,7 @@ const About = () => {
                                 participate in training, teaching, and learning communities. I
                                 also managed to get a competency certificate
                                 <button className="text-warning bg-transparent border-0" onClick={toCertificate}> show my certificate</button>. To get to know me better, you
-                                can connect on my <a href="https://t.me/Njir_18" target="_blank" rel="noreferrer" className="text-warning">Telegram</a> or you can also contact me via this page <a href="#contact" className="text-warning">Contact</a>
+                                can connect on my <a href="https://t.me/Njir_18" target="_blank" rel="noreferrer" className="text-warning text-decoration-none">Telegram</a> or you can also contact me via this page <button className="text-warning bg-transparent border-0" onClick={() => scrollY('contact')}>Contact</button>
                             </p>
                         </Col>
                     </Row>
@@ -61,31 +68,33 @@ const About = () => {
                     <Row className="justify-content-center">
                         <Col md={8} className="text-start mt-5" data-aos="fade-down">
                             <p>
-                                <span className="border-bottom text-warning">Fajar Pages</span> is a website created in December 2023. I made this website as a personal record of what I have done, be it my project or other things.
+                                <span className="text-warning">Fajar Pages</span> is a website created in December 2023. I made this website as a personal record of what I have done, be it my project or other things.
                                 Hopefully this website can be useful for all of you; Hopefully we can work together to advance this beloved country through programming or other things related to technology.
                                 I personally apologize profusely if there are any mistakes, because I am also still in the learning stage.
                             </p>
                         </Col>
                     </Row>
-                    <Row className="justify-content-center mt-5">
-                        <Col className="text-center">
-                            <h1 data-aos="fade-up">Tech Stack</h1>
-                            <hr />
+                    <Row className="mt-5 border-bottom">
+                        <Col className="d-flex justify-content-evenly align-items-center">
+                            <h1 data-aos="fade-up" className="text-menu">Tech Stack</h1>
                         </Col>
                     </Row>
-                    <Row className="justify-content-center mb-5">
-                        {images.map((image, index) => (
-                            <Col key={index} md={4} className="text-center mt-5 d-flex justify-content-center">
-                                <div className="skill-img-container" data-aos="fade-up" data-aos-delay={index * 100}>
-                                    <img
-                                        src={image}
-                                        alt="Tech-Stack"
-                                        className="img-fluid skills-img py-3"
-                                    />
-                                </div>
-                            </Col>
-                        ))}
-                    </Row>
+                    <div className="d-flex justify-content-center">
+                        <Row className="justify-content-center mb-5 skill-content">
+                            {images.map((image, index) => (
+                                <Col key={index} xs={6} md={4} className="text-center mt-5 d-flex justify-content-center">
+                                    <div className="skill-img-container " data-aos="fade-up" data-aos-delay={index * 100}>
+                                        <img
+                                            src={image}
+                                            alt="Tech-Stack"
+                                            className="skills-img"
+                                        />
+                                    </div>
+                                </Col>
+                            ))}
+                        </Row>
+                    </div>
+
                     <Row className="justify-content-center">
                         <Col className="mt-5 text-center">
                             <h1>My Projects</h1>
@@ -145,14 +154,14 @@ const About = () => {
                             </Row>
                         )}
 
-                    <div className="justify-content-center text-center mt-5 mb-5">
-                        <Button variant="outline-warning" onClick={toggleShowAll}>
-                            {showAll ? "Close" : "Show All Project"}
-                        </Button>{' '}
-                    </div>
-                </Row>
-            </Container>
-        </div>
+                        <div className="justify-content-center text-center mt-5 mb-5">
+                            <Button variant="outline-warning" onClick={toggleShowAll}>
+                                {showAll ? "Close" : "Show All Project"}
+                            </Button>{' '}
+                        </div>
+                    </Row>
+                </Container>
+            </div>
         </div >
     );
 };

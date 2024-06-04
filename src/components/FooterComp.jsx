@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import { Container, Row, Col , Button} from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import feather from 'feather-icons';
+import Swal from "sweetalert2";
 
 const FaqComp = () => {
     useEffect(() => {
@@ -13,6 +14,21 @@ const FaqComp = () => {
             section.scrollIntoView({ behavior: 'smooth' });
         }
     };
+
+    const galleryUrl = () => {
+        const url = "https://gallery-alfajjar.vercel.app";
+        Swal.fire({
+            icon: "info",
+            title: "Switch pages",
+            html: `<p>You will be redirected to the following page : <a href="${url}">${url}</a></p>`,
+            showCancelButton: true,
+            confirmButtonText: "Oke",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = url;
+            }
+        })
+    }
 
     return (
         <footer className="bg-dark text-white">
@@ -43,7 +59,7 @@ const FaqComp = () => {
                                 <Button
                                     className="mx-2 border-0"
                                     variant="outline-warning"
-                                    onClick={() => scrollY("gallery")}
+                                    onClick={() => galleryUrl()}
                                 >
                                     Gallery
                                 </Button>
