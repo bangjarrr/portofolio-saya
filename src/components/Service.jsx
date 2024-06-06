@@ -1,98 +1,126 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import AOS from "aos";
-import Swal from "sweetalert2";
 import '../../node_modules/aos/dist/aos.css';
 import '../css/main.css';
+import '../css/service.css';
+import Swal from "sweetalert2";
+import feather from 'feather-icons';
 import websiteKelas from '../assets/img/project/kelas.png';
 import qrCodeImg from '../assets/img/project/qrcode.png';
 
 const importAll = (r) => r.keys().map(r);
 let images = importAll(require.context('../assets/img/skills/', false, /\.(png|jpe?g|svg)$/));
+let certificate = importAll(require.context('../assets/img/certificate/', false, /\.(png|jpe?g|svg)$/));
 
-const About = () => {
+export default function Service() {
     const [showAll, setShowAll] = useState(false);
+    const [showCertificates, setShowCertificates] = useState(false);
+    const [showSkills, setShowSkills] = useState(true);
 
-    const scrollY = (id) => {
-        const section = document.getElementById(id);
-        if (section) {
-            section.scrollIntoView({ behavior:'smooth' });
-        }
-    }
+    const titleSkills = ['HTML', 'CSS', 'JAVASCRIPT', 'PYTHON', 'MYSQL']
 
     const toggleShowAll = () => {
         setShowAll(!showAll);
     }
+
+    const toggleCertificates = () => {
+        setShowCertificates(!showCertificates);
+        setShowSkills(false);
+    }
+
+    const toggleSkills = () => {
+        setShowSkills(!showSkills);
+        setShowCertificates(false);
+    }
+
+    const toggleCheckCertificate = () => {
+        certificate.forEach((img, index) => {
+            Swal.fire({
+                html: `
+                    <div class="container-img" style="position: relative;">
+                        <button id="swal-close-btn" style="position: absolute; top: 10px; right: 10px; background: none; border: none; color: white; font-size: 24px;">
+                            <i data-feather="x"></i>
+                        </button>
+                        <img src="${img}" alt="Certificate" class="full-screen-image" />
+                    </div>
+                `,
+                showClass: {
+                    popup: 'animate__animated animate__fadeIn'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOut'
+                },
+                customClass: {
+                    popup: 'full-screen-popup'
+                },
+                width: 'auto',
+                padding: '0',
+                background: 'none',
+                backdrop: `
+                    rgba(0, 0, 0, 0.4)
+                `,
+                showConfirmButton: false,
+                allowOutsideClick: false,
+                didOpen: () => {
+                    feather.replace();
+                    document.getElementById('swal-close-btn').addEventListener('click', () => {
+                        Swal.close();
+                    });
+                }
+            });
+        });
+    };
 
     useEffect(() => {
         AOS.init();
         AOS.refresh();
     }, []);
 
-    const toCertificate = () => {
-        Swal.fire({
-            title: 'Ups !',
-            text: "The page is under construction",
-            icon: 'info',
-        });
-    }
-
     return (
-        <div className="d-flex flex-column min-vh-100 justify-content-center w-body text-white" id="about">
+        <div className="d-flex flex-column min-vh-100 justify-content-center w-body text-white">
             <div className="mt-5">
                 <Container>
-                    <Row>
-                        <Col className="text-center mt-5">
-                            <h1 data-aos="fade-down">About Me</h1>
-                        </Col>
-                    </Row>
-                    <Row className="justify-content-center mt-5">
-                        <Col md={8} className="text-start" data-aos="fade-down">
-                            <p>
-                                Hi, I'm Mochammad Alfajjar, usually called Fajar. I'm from East
-                                Java, Indonesia 🇮🇩. I am a vocational high school student,
-                                majoring in computer and network engineering. I have an interest
-                                in the world of programming, especially web programming. I actively
-                                participate in training, teaching, and learning communities. I
-                                also managed to get a competency certificate
-                                <button className="text-warning bg-transparent border-0" onClick={toCertificate}> show my certificate</button>. To get to know me better, you
-                                can connect on my <a href="https://t.me/Njir_18" target="_blank" rel="noreferrer" className="text-warning text-decoration-none">Telegram</a> or you can also contact me via this page <button className="text-warning bg-transparent border-0" onClick={() => scrollY('contact')}>Contact</button>
-                            </p>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col className="text-center mt-5">
-                            <h1 data-aos="fade-down">About Fajar Pages</h1>
-                        </Col>
-                    </Row>
-                    <Row className="justify-content-center">
-                        <Col md={8} className="text-start mt-5" data-aos="fade-down">
-                            <p>
-                                <span className="text-warning">Fajar Pages</span> is a website created in December 2023. I made this website as a personal record of what I have done, be it my project or other things.
-                                Hopefully this website can be useful for all of you; Hopefully we can work together to advance this beloved country through programming or other things related to technology.
-                                I personally apologize profusely if there are any mistakes, because I am also still in the learning stage.
-                            </p>
-                        </Col>
-                    </Row>
                     <Row className="mt-5 border-bottom">
                         <Col className="d-flex justify-content-evenly align-items-center">
-                            <h1 data-aos="fade-up" className="text-menu">Tech Stack</h1>
+                            <h1 data-aos="fade-up" className="text-menu" onClick={toggleSkills}>Tech Stack</h1>
+                            <h1 data-aos="fade-up" className="text-menu" onClick={toggleCertificates}>Certificate</h1>
                         </Col>
                     </Row>
                     <div className="d-flex justify-content-center">
-                        <Row className="justify-content-center mb-5 skill-content">
-                            {images.map((image, index) => (
-                                <Col key={index} xs={6} md={4} className="text-center mt-5 d-flex justify-content-center">
-                                    <div className="skill-img-container " data-aos="fade-up" data-aos-delay={index * 100}>
-                                        <img
-                                            src={image}
-                                            alt="Tech-Stack"
-                                            className="skills-img"
-                                        />
-                                    </div>
-                                </Col>
-                            ))}
-                        </Row>
+                        {showSkills && (
+                            <Row className="justify-content-center mb-5 skill-content">
+                                {images.map((image, index) => (
+                                    <Col key={index} xs={6} md={4} className="text-center mt-5 d-flex justify-content-center">
+                                        <div className="skill-img-container" data-aos="fade-up" data-aos-delay={index * 100}>
+                                            <img
+                                                src={image}
+                                                alt="Tech-Stack"
+                                                title={titleSkills[index]}
+                                                className="skills-img"
+                                            />
+                                        </div>
+                                    </Col>
+                                ))}
+                            </Row>
+                        )}
+                        {showCertificates && (
+                            <Row className="justify-content-center mb-5 certificate-content animate__animated animate__fadeInRight">
+                                {certificate.map((image, index) => (
+                                    <Col key={index} xs={6} md={4} className="text-center mt-5 d-flex justify-content-center">
+                                        <div className="skill-img-container" data-aos="fade-up" data-aos-delay={index * 100}>
+                                            <img
+                                                src={image}
+                                                alt="Certificate"
+                                                title={`Certificate ${index + 1}`}
+                                                className="certificate-img"
+                                                onClick={() => toggleCheckCertificate()}
+                                            />
+                                        </div>
+                                    </Col>
+                                ))}
+                            </Row>
+                        )}
                     </div>
 
                     <Row className="justify-content-center">
@@ -165,5 +193,3 @@ const About = () => {
         </div >
     );
 };
-
-export default About;

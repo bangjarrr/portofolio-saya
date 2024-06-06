@@ -1,10 +1,11 @@
 import NavbarComp from './components/NavbarComp';
 import HeroComp from './components/HeroComp';
+import About from './components/AboutComp';
 import Service from './components/Service';
 import FaqComp from './components/FaqComp';
 import FooterComp from './components/FooterComp';
 
-function App() {
+export default function App() {
   return (
     <div>
       <HeroComp />
@@ -13,6 +14,7 @@ function App() {
       {/* Content */}
 
       <NavbarComp />
+      <About />
       <Service />
       {/* Content */}
 
@@ -23,5 +25,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
