@@ -34,10 +34,9 @@ export default function Service() {
         setShowCertificates(false);
     }
 
-    const toggleCheckCertificate = () => {
-        certificate.forEach((img, index) => {
-            Swal.fire({
-                html: `
+    const toggleCheckCertificate = (img) => {
+        Swal.fire({
+            html: `
                     <div class="container-img" style="position: relative;">
                         <button id="swal-close-btn" style="position: absolute; top: 10px; right: 10px; background: none; border: none; color: white; font-size: 24px;">
                             <i data-feather="x"></i>
@@ -45,30 +44,29 @@ export default function Service() {
                         <img src="${img}" alt="Certificate" class="full-screen-image" />
                     </div>
                 `,
-                showClass: {
-                    popup: 'animate__animated animate__fadeIn'
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__fadeOut'
-                },
-                customClass: {
-                    popup: 'full-screen-popup'
-                },
-                width: 'auto',
-                padding: '0',
-                background: 'none',
-                backdrop: `
-                    rgba(0, 0, 0, 0.4)
+            showClass: {
+                popup: 'animate__animated animate__fadeIn'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOut'
+            },
+            customClass: {
+                popup: 'full-screen-popup'
+            },
+            width: 'auto',
+            padding: '0',
+            background: 'none',
+            backdrop: `
+                    rgba(0, 0, 0, 0.6)
                 `,
-                showConfirmButton: false,
-                allowOutsideClick: false,
-                didOpen: () => {
-                    feather.replace();
-                    document.getElementById('swal-close-btn').addEventListener('click', () => {
-                        Swal.close();
-                    });
-                }
-            });
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            didOpen: () => {
+                feather.replace();
+                document.getElementById('swal-close-btn').addEventListener('click', () => {
+                    Swal.close();
+                });
+            }
         });
     };
 
@@ -114,7 +112,7 @@ export default function Service() {
                                                 alt="Certificate"
                                                 title={`Certificate ${index + 1}`}
                                                 className="certificate-img"
-                                                onClick={() => toggleCheckCertificate()}
+                                                onClick={() => toggleCheckCertificate(image)}
                                             />
                                         </div>
                                     </Col>
