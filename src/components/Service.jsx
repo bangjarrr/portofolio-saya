@@ -25,8 +25,15 @@ export default function Service() {
     }
 
     const toggleCertificates = () => {
-        setShowCertificates(!showCertificates);
-        setShowSkills(false);
+        // setShowCertificates(!showCertificates);
+        // setShowSkills(false);
+
+        Swal.fire({
+            icon: 'info',
+            title: 'Ups!',
+            text: 'The page is under construction',
+            confirmButtonText: 'Oke',
+        })
     }
 
     const toggleSkills = () => {
