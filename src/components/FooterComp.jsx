@@ -59,6 +59,15 @@ const FaqComp = () => {
                                 <Button
                                     className="mx-2 border-0"
                                     variant="outline-warning"
+                                    onClick={() => scrollY('project')}
+                                >
+                                    Projects
+                                </Button>
+                            </li>
+                            <li>
+                                <Button
+                                    className="mx-2 border-0"
+                                    variant="outline-warning"
                                     onClick={() => galleryUrl()}
                                 >
                                     Gallery

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
-import Swal from "sweetalert2";
 
 const NavbarComp = () => {
 
@@ -27,21 +26,6 @@ const NavbarComp = () => {
         window.addEventListener("scroll", changeBackgroundColor);
     });
 
-    const galleryUrl = () => {
-        const url = "https://gallery-alfajjar.vercel.app";
-        Swal.fire({
-            icon: "info",
-            title: "Switch pages",
-            html: `<p>You will be redirected to the following page : <a href="${url}">${url}</a></p>`,
-            showCancelButton: true,
-            confirmButtonText: "Oke",
-        }).then((result) => {
-            if(result.isConfirmed) {
-                window.location.href = url;
-            }
-        })
-    }
-
     return (
         <div className="sticky-top w-body">
             <Navbar variant="dark" expand="lg" className={changeColor ? "color-active" : ""}>
@@ -67,9 +51,9 @@ const NavbarComp = () => {
                             <Button 
                                 className="mx-2 border-0"
                                 variant="outline-light"
-                                onClick={() => galleryUrl()}
+                                onClick={() => scrollY('project')}
                             >
-                                Gallery
+                                Projects
                             </Button>
                             <Button 
                                 className="mx-2 border-0"
