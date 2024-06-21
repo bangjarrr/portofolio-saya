@@ -191,3 +191,15 @@ img {
 .animate-right.rawr {
     transform: translateX(100%);
 }
+
+@media (max-width: 768px) {
+    #my-form {
+        width: 80%;
+    }
+}
+
+@media (min-width: 769px) {
+    #my-form {
+        width: 60%;
+    }
+}

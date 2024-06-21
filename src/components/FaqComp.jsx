@@ -3,6 +3,7 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import emailjs from 'emailjs-com';
 import ReCAPTCHA from "react-google-recaptcha";
+import '../css/main.css';
 
 const FaqComp = () => {
     const formRef = useRef(null);
@@ -85,29 +86,31 @@ const FaqComp = () => {
                         </Col>
                     </Row>
                     <div className="d-flex justify-content-center mb-5 pb-5 w-100">
-                        <Form ref={formRef} className="text-white w-100" onSubmit={sendToEmail} id="my-form">
+                        <Form ref={formRef} className="text-white" onSubmit={sendToEmail} id="my-form">
                             <Form.Group className="mb-3" controlId="formNama">
-                                <Form.Label>Name</Form.Label>
-                                <Form.Control type="text" placeholder="Enter name" name="nama" id="nama" />
+                                <Form.Label>Enter Name</Form.Label>
+                                <Form.Control type="text" name="nama" id="nama" className="bg-dark text-white" required/>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formEmail">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" name="email" id="email" />
+                                <Form.Control type="email" name="email" id="email" className="bg-dark text-white" required/>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formPesan">
                                 <Form.Label>Message</Form.Label>
-                                <Form.Control as="textarea" rows={3} placeholder="Enter message" name="pesan" id="pesan" />
+                                <Form.Control as="textarea" rows={3} name="pesan" id="pesan" className="bg-dark text-white" required/>
                             </Form.Group>
+
 
 
                             <ReCAPTCHA
                                 sitekey="6LdZ_NgpAAAAAB0dvSXNsonB5uAGCTqdMWI_5I-k"
                                 onChange={onChange}
+                                theme="dark"
                             />
 
-                            <Button variant="success" type="submit">
+                            <Button variant="outline-warning" type="submit" className="my-3 px-5">
                                 Send
                             </Button>
                         </Form>
