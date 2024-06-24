@@ -89,17 +89,17 @@ const FaqComp = () => {
                         <Form ref={formRef} className="text-white" onSubmit={sendToEmail} id="my-form">
                             <Form.Group className="mb-3" controlId="formNama">
                                 <Form.Label>Enter Name</Form.Label>
-                                <Form.Control type="text" name="nama" id="nama" className="bg-dark text-white" required/>
+                                <Form.Control type="text" name="nama" id="nama" className="text-white border-0 border-bottom" style={{ backgroundColor: '#202020' }} required/>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formEmail">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" name="email" id="email" className="bg-dark text-white" required/>
+                                <Form.Control type="email" name="email" id="email" className="text-white border-0 border-bottom" style={{ backgroundColor: '#202020' }} required/>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formPesan">
                                 <Form.Label>Message</Form.Label>
-                                <Form.Control as="textarea" rows={3} name="pesan" id="pesan" className="bg-dark text-white" required/>
+                                <Form.Control as="textarea" rows={3} name="pesan" id="pesan" className="text-white border-0 border-bottom" style={{ backgroundColor: '#202020' }} required/>
                             </Form.Group>
 
 
