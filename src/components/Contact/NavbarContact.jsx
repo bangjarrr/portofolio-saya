@@ -3,17 +3,9 @@ import { Navbar, Nav, Container, Button } from "react-bootstrap";
 
 const NavbarComp = () => {
 
-    const scrollY = (id) => {
-        const section = document.getElementById(id);
-
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     const [changeColor, setChangeColor] = useState(false);
     const changeBackgroundColor = () => {
-        if (window.scrollY > 750) {
+        if (window.scrollY > 0) {
             setChangeColor(true);
         } else {
             setChangeColor(false);
@@ -31,7 +23,7 @@ const NavbarComp = () => {
     });
 
     return (
-        <div className="sticky-top w-body">
+        <div className="fixed-top w-body">
             <Navbar variant="dark" expand="lg" className={changeColor ? "color-active" : ""}>
                 <Container>
                     <Navbar.Brand href="#home" className="fw-bold fs-4">Portofolio | Alfajjar</Navbar.Brand>
@@ -41,23 +33,9 @@ const NavbarComp = () => {
                             <Button
                                 className="mx-2 border-0"
                                 variant="outline-light"
-                                onClick={() => scrollY("home")}
+                                onClick={() => window.location.href = '/'}
                             >
                                 Home
-                            </Button>
-                            <Button
-                                className="mx-2 border-0"
-                                variant="outline-light"
-                                onClick={() => scrollY("about")}
-                            >
-                                About
-                            </Button>
-                            <Button
-                                className="mx-2 border-0"
-                                variant="outline-light"
-                                onClick={() => scrollY('project')}
-                            >
-                                Projects
                             </Button>
                             <Button
                                 className="mx-2 border-0"

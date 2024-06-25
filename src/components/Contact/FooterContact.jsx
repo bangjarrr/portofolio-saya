@@ -3,17 +3,10 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import feather from 'feather-icons';
 import Swal from "sweetalert2";
 
-const FaqComp = () => {
+const FooterContact = () => {
     useEffect(() => {
         feather.replace()
     }, []);
-    const scrollY = (id) => {
-        const section = document.getElementById(id);
-
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
 
     const galleryUrl = () => {
         const url = "https://gallery-alfajjar.vercel.app";
@@ -41,7 +34,7 @@ const FaqComp = () => {
                                 <Button
                                     className="mx-2 border-0"
                                     variant="outline-warning"
-                                    onClick={() => scrollY("home")}
+                                    onClick={() => window.location.href = "/"}
                                 >
                                     Home
                                 </Button>
@@ -50,25 +43,7 @@ const FaqComp = () => {
                                 <Button
                                     className="mx-2 border-0"
                                     variant="outline-warning"
-                                    onClick={() => scrollY("about")}
-                                >
-                                    About
-                                </Button>
-                            </li>
-                            <li>
-                                <Button
-                                    className="mx-2 border-0"
-                                    variant="outline-warning"
-                                    onClick={() => scrollY('project')}
-                                >
-                                    Projects
-                                </Button>
-                            </li>
-                            <li>
-                                <Button
-                                    className="mx-2 border-0"
-                                    variant="outline-warning"
-                                    onClick={() => galleryUrl()}
+                                    onClick={galleryUrl}
                                 >
                                     Gallery
                                 </Button>
@@ -136,4 +111,4 @@ const FaqComp = () => {
     );
 };
 
-export default FaqComp;
+export default FooterContact;
