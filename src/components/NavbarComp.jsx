@@ -20,10 +20,6 @@ const NavbarComp = () => {
         }
     }
 
-    const toContact = () => {
-        window.location.href = "/contact";
-    }
-
     useEffect(() => {
         changeBackgroundColor();
 
@@ -38,35 +34,34 @@ const NavbarComp = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto text-center">
-                            <Button
+                            <Button 
                                 className="mx-2 border-0"
                                 variant="outline-light"
                                 onClick={() => scrollY("home")}
                             >
                                 Home
                             </Button>
-                            <Button
+                            <Button 
                                 className="mx-2 border-0"
                                 variant="outline-light"
                                 onClick={() => scrollY("about")}
                             >
                                 About
                             </Button>
-                            <Button
+                            <Button 
                                 className="mx-2 border-0"
                                 variant="outline-light"
                                 onClick={() => scrollY('project')}
                             >
                                 Projects
                             </Button>
-                            <Button
+                            <Button 
                                 className="mx-2 border-0"
                                 variant="outline-light"
-                                onClick={toContact}
+                                onClick={() => scrollY("contact")}
                             >
                                 Contact
                             </Button>
-                            
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

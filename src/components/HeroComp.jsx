@@ -59,7 +59,7 @@ const HeroComp = () => {
                         <Button
                             variant="outline-light"
                             size="lg"
-                            onClick={() => window.location.href = "/contact"}
+                            onClick={() => scrollToSection('contact')}
                             data-aos="fade-up"
                             data-aos-delay="200"
                         >
