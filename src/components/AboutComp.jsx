@@ -1,17 +1,9 @@
 import React, { useEffect } from "react";
 import Aos from "aos";
 import { Container, Row, Col } from 'react-bootstrap';
-import Swal from "sweetalert2";
 import '../css/main.css';
 
 export default function About() {
-    const toCertificate = () => {
-        Swal.fire({
-            title: 'Ups !',
-            text: "The page is under construction",
-            icon: 'info',
-        });
-    }
 
     const scrollY = (id) => {
         const section = document.getElementById(id);
@@ -37,14 +29,9 @@ export default function About() {
                     <Row className="justify-content-center mt-5">
                         <Col md={8} className="text-start" data-aos="fade-down">
                             <p>
-                                Hi, I'm Mochammad Alfajjar, usually called Fajar. I'm from East
-                                Java, Indonesia 🇮🇩. I am a vocational high school student,
-                                majoring in computer and network engineering. I have an interest
-                                in the world of programming, especially web programming. I actively
-                                participate in training, teaching, and learning communities. I
-                                also managed to get a competency certificate
-                                <button className="text-warning bg-transparent border-0" onClick={toCertificate}> show my certificate</button>. To get to know me better, you
-                                can connect on my <a href="https://t.me/Njir_18" target="_blank" rel="noreferrer" className="text-warning text-decoration-none">Telegram</a> or you can also contact me via this page <button className="text-warning bg-transparent border-0" onClick={() => scrollY('contact')}>Contact</button>
+                                Hi, I'm Mochammad Alfajjar, usually called Fajar. I'm from East Java, Indonesia 	ID. I am a vocational high school student, majoring in computer and network engineering. I have an interest in the world of programming. I actively participate in training and learning communities. I also managed to get a competency certificate.  I also have a lot of experience from the Paskibra so getting a certificate is quite proud for me
+                                <button className="text-warning bg-transparent border-0" onClick={() => scrollY('service')}> see my certificate</button>. To get to know me better, you
+                                can connect on my <a href="https://t.me/Njir_18" target="_blank" rel="noreferrer" className="text-warning text-decoration-none">Telegram</a> or <a href="https://www.instagram.com/bang_jarrrz/" target="_blank" rel="noreferrer" className="text-warning text-decoration-none">Instagram</a> you can also contact me via this page <button className="text-warning bg-transparent border-0" onClick={() => scrollY('contact')}>Contact</button>.
                             </p>
                         </Col>
                     </Row>

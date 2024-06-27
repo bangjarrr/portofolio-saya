@@ -30,7 +30,7 @@ const NavbarComp = () => {
         <div className="sticky-top w-body">
             <Navbar variant="dark" expand="lg" className={changeColor ? "color-active" : ""}>
                 <Container>
-                    <Navbar.Brand href="#home" className="fw-bold fs-4">Portofolio | Alfajjar</Navbar.Brand>
+                    <Navbar.Brand href="#home" className="fw-bold fs-4">Portfolio | Alfajjar</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto text-center">

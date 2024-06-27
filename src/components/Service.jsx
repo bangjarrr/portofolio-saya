@@ -4,14 +4,45 @@ import AOS from "aos";
 import '../../node_modules/aos/dist/aos.css';
 import '../css/main.css';
 import '../css/service.css';
-import Swal from "sweetalert2";
-import feather from 'feather-icons';
 import websiteKelas from '../assets/img/project/kelas.png';
 import qrCodeImg from '../assets/img/project/qrcode.png';
 
+import paskib_1 from '../assets/img/certificate/sertiv paskib1.jpg';
+import paskib_2 from '../assets/img/certificate/sertiv paskib2.jpg';
+import paskib_3 from '../assets/img/certificate/sertiv paskib3.jpg';
+import paskib_4 from '../assets/img/certificate/sertiv paskib4.jpg';
+import dasarAI from '../assets/img/certificate/dasarAI.jpg';
+
 const importAll = (r) => r.keys().map(r);
 let images = importAll(require.context('../assets/img/skills/', false, /\.(png|jpe?g|svg)$/));
-let certificate = importAll(require.context('../assets/img/certificate/', false, /\.(png|jpe?g|svg)$/));
+
+const certificate = [
+    {
+        title: "Sertifikat Paskibra Juara II Mula dalam LKBB Sakti Se-JawaTimur",
+        img: paskib_1,
+        link: paskib_1
+    },
+    {
+        title: "Sertifikat Paskibra Juara Umum dalam LKBB Patriot Se-JawaTimur",
+        img: paskib_4,
+        link: paskib_4
+    },
+    {
+        title: "Sertifikat Paskibra Juara II Utama dalam LKBB Patriot Se-JawaTimur",
+        img: paskib_3,
+        link: paskib_3
+    },
+    {
+        title: "Sertifikat Paskibra BEST PBB dalam LKBB Patriot Se-JawaTimur",
+        img: paskib_2,
+        link: paskib_2
+    },
+    {
+        title: "Belajar dasar AI",
+        img: dasarAI,
+        link: "https://www.dicoding.com/dicodingassets/coursecertificate/d2a743e25f63fef75bfed7e16b8de3d1ad5961af/view"
+    }
+]
 
 export default function Service() {
     const [showAll, setShowAll] = useState(false);
@@ -25,54 +56,14 @@ export default function Service() {
     }
 
     const toggleCertificates = () => {
-        Swal.fire({
-            icon: 'info',
-            title: 'Ups!',
-            text: 'The page is under construction',
-            confirmButtonText: 'Oke',
-        })
+        setShowSkills(false);
+        setShowCertificates(true);
     }
 
     const toggleSkills = () => {
-        setShowSkills(!showSkills);
+        setShowSkills(true);
         setShowCertificates(false);
     }
-
-    const toggleCheckCertificate = (img) => {
-        Swal.fire({
-            html: `
-                    <div class="container-img" style="position: relative;">
-                        <button id="swal-close-btn" style="position: absolute; top: 10px; right: 10px; background: none; border: none; color: white; font-size: 24px;">
-                            <i data-feather="x"></i>
-                        </button>
-                        <img src="${img}" alt="Certificate" class="full-screen-image" />
-                    </div>
-                `,
-            showClass: {
-                popup: 'animate__animated animate__fadeIn'
-            },
-            hideClass: {
-                popup: 'animate__animated animate__fadeOut'
-            },
-            customClass: {
-                popup: 'full-screen-popup'
-            },
-            width: 'auto',
-            padding: '0',
-            background: 'none',
-            backdrop: `
-                    rgba(0, 0, 0, 0.6)
-                `,
-            showConfirmButton: false,
-            allowOutsideClick: false,
-            didOpen: () => {
-                feather.replace();
-                document.getElementById('swal-close-btn').addEventListener('click', () => {
-                    Swal.close();
-                });
-            }
-        });
-    };
 
     useEffect(() => {
         AOS.init();
@@ -80,7 +71,7 @@ export default function Service() {
     }, []);
 
     return (
-        <div className="d-flex flex-column min-vh-100 justify-content-center w-body text-white">
+        <div className="d-flex flex-column min-vh-100 justify-content-center w-body text-white" id="service">
             <div className="mt-5">
                 <Container>
                     <Row className="mt-5 border-bottom">
@@ -93,7 +84,7 @@ export default function Service() {
                         {showSkills && (
                             <Row className="justify-content-center mb-5 skill-content">
                                 {images.map((image, index) => (
-                                    <Col key={index} xs={6} md={4} className="text-center mt-5 d-flex justify-content-center">
+                                    <Col key={index} xs={6} md={3} className="text-center mt-5 d-flex justify-content-center">
                                         <div className="skill-img-container" data-aos="fade-up" data-aos-delay={index * 100}>
                                             <img
                                                 src={image}
@@ -106,24 +97,25 @@ export default function Service() {
                                 ))}
                             </Row>
                         )}
+
+                    </div>
+                    <div>
                         {showCertificates && (
-                            <Row className="justify-content-center mb-5 certificate-content animate__animated animate__fadeInRight">
-                                {certificate.map((image, index) => (
-                                    <Col key={index} xs={6} md={4} className="text-center mt-5 d-flex justify-content-center">
-                                        <div className="skill-img-container" data-aos="fade-up" data-aos-delay={index * 100}>
-                                            <img
-                                                src={image}
-                                                alt="Certificate"
-                                                title={`Certificate ${index + 1}`}
-                                                className="certificate-img"
-                                                onClick={() => toggleCheckCertificate(image)}
-                                            />
-                                        </div>
-                                    </Col>
+                            <div className="my-5 animate__animated animate__fadeInRight">
+                                {certificate.map((certif, index) => (
+                                    <ul className="list-style my-4 text-start" key={index}>
+                                        <li className="list-item">
+                                            <a href={certif.link} target="_blank" rel="noreferrer" className="text-white fs-6 link">
+                                                {certif.title}
+                                                <img src={certif.img} className="link-img" alt={certif.title} />
+                                            </a>
+                                        </li>
+                                    </ul>
                                 ))}
-                            </Row>
+                            </div>
                         )}
                     </div>
+
 
                     <div className="mt-5 pt-5" id="project">
                         <Row className="justify-content-center">
