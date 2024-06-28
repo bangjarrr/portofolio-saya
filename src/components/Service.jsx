@@ -7,40 +7,85 @@ import '../css/service.css';
 import websiteKelas from '../assets/img/project/kelas.png';
 import qrCodeImg from '../assets/img/project/qrcode.png';
 
-import paskib_1 from '../assets/img/certificate/sertiv paskib1.jpg';
-import paskib_2 from '../assets/img/certificate/sertiv paskib2.jpg';
-import paskib_3 from '../assets/img/certificate/sertiv paskib3.jpg';
-import paskib_4 from '../assets/img/certificate/sertiv paskib4.jpg';
-import dasarAI from '../assets/img/certificate/dasarAI.jpg';
+// import dasarAI from '../assets/img/certificate/dasarAI.jpg';
 
 const importAll = (r) => r.keys().map(r);
 let images = importAll(require.context('../assets/img/skills/', false, /\.(png|jpe?g|svg)$/));
+let imagesSertiv = importAll(require.context('../assets/img/certificate/', false, /\.(png|jpe?g|svg)$/));
+
+// const certificate = [
+//     {
+//         title: "Sertifikat Paskibra Juara II Mula dalam LKBB Sakti Se-JawaTimur",
+//         img: paskib_1,
+//         link: paskib_1
+//     },
+//     {
+//         title: "Sertifikat Paskibra Juara Umum dalam LKBB Patriot Se-JawaTimur",
+//         img: paskib_4,
+//         link: paskib_4
+//     },
+//     {
+//         title: "Sertifikat Paskibra Juara II Utama dalam LKBB Patriot Se-JawaTimur",
+//         img: paskib_3,
+//         link: paskib_3
+//     },
+//     {
+//         title: "Sertifikat Paskibra BEST PBB dalam LKBB Patriot Se-JawaTimur",
+//         img: paskib_2,
+//         link: paskib_2
+//     },
+//     {
+//         title: "Belajar dasar AI",
+//         img: dasarAI,
+//         link: "https://www.dicoding.com/dicodingassets/coursecertificate/d2a743e25f63fef75bfed7e16b8de3d1ad5961af/view"
+//     }
+// ]
 
 const certificate = [
     {
+        title: "Belajar dasar AI",
+        img: imagesSertiv[0],
+        link: "https://www.dicoding.com/dicodingassets/coursecertificate/d2a743e25f63fef75bfed7e16b8de3d1ad5961af/view"
+    },
+    {
         title: "Sertifikat Paskibra Juara II Mula dalam LKBB Sakti Se-JawaTimur",
-        img: paskib_1,
-        link: paskib_1
+        img: imagesSertiv[1],
+        link: "https://drive.google.com/file/d/1sKfDVY9iEcnQuioHRtowTY6LfzKV0cPV/view"
     },
     {
         title: "Sertifikat Paskibra Juara Umum dalam LKBB Patriot Se-JawaTimur",
-        img: paskib_4,
-        link: paskib_4
+        img: imagesSertiv[2],
+        link: "https://drive.google.com/file/d/19XKFH8tB44AAQqeIjTeGKuYTj_9LTGWS/view"
     },
     {
         title: "Sertifikat Paskibra Juara II Utama dalam LKBB Patriot Se-JawaTimur",
-        img: paskib_3,
-        link: paskib_3
+        img: imagesSertiv[3],
+        link: "https://drive.google.com/file/d/1L2baZUdgMH-3_EPI0Nd04AVsXEGl3fX8/view"
     },
     {
         title: "Sertifikat Paskibra BEST PBB dalam LKBB Patriot Se-JawaTimur",
-        img: paskib_2,
-        link: paskib_2
+        img: imagesSertiv[4],
+        link: "https://drive.google.com/file/d/1RnDDkcRVbTPvLHv09bY_tswjjuKt3Zjg/view"
     },
     {
-        title: "Belajar dasar AI",
-        img: dasarAI,
-        link: "https://www.dicoding.com/dicodingassets/coursecertificate/d2a743e25f63fef75bfed7e16b8de3d1ad5961af/view"
+        title: "Sertifikat Paskibra Juara II Mula dalam LKBB Agra Se-Pulau Jawa (Open)",
+        img: imagesSertiv[5],
+        link: "https://drive.google.com/file/d/1Gw-zoViEM9TtnBAPa0u4QKALzl_QzOmJ/view"
+    },
+    {
+        title: "Sertifikat Paskibra Juara Utama III dalam LKBB Joko tingkir se-JawaTimur",
+        img: imagesSertiv[6],
+        link: "https://drive.google.com/file/d/1OrfbEOkQx0vlVBjPGw7HIG540JFag45A/view"
+    },
+    {
+        title: "Sertifikat Paskibra BEST PBB II dalam LKBB Joko tingkir se-JawaTimur",
+        img: imagesSertiv[7],
+        link: "https://drive.google.com/file/d/1PmXMMGUgjJmy6Razq5VMxXa7brj4HDi2/view"
+    },
+    {
+        title: "Sertifikat Paskibra BEST VARFOR Madya 3 dalam LKBB Joko tingkir se-JawaTimur",
+        img: imagesSertiv[8],
+        link: "https://drive.google.com/file/d/18I9rura8R_fv4TzCNzoFArKjLumwDKpS/view"
     }
 ]
 

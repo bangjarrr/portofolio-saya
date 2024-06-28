@@ -204,3 +204,11 @@ img {
     }
 }
 
+.form-control {
+    outline: none;
+}
+
+.form-control:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}

@@ -89,18 +89,40 @@ const FaqComp = () => {
                     <div className="d-flex justify-content-center mb-5 pb-5 w-100">
                         <Form ref={formRef} className="text-white" onSubmit={sendToEmail} id="my-form">
                             <Form.Group className="mb-3" controlId="formNama">
-                                <Form.Label className="mx-2">Enter Name</Form.Label>
-                                <Form.Control type="text" name="nama" id="nama" className="text-white border-0 border-bottom" style={{ backgroundColor: '#202020' }} required/>
+                                <Form.Label className="form-label mx-2">Enter Name</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    name="nama"
+                                    id="nama"
+                                    className="text-white border-0 border-bottom form-control"
+                                    style={{ backgroundColor: '#202020' }}
+                                    required
+                                />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formEmail">
-                                <Form.Label className="mx-2">Email address</Form.Label>
-                                <Form.Control type="email" name="email" id="email" className="text-white border-0 border-bottom" style={{ backgroundColor: '#202020' }} required/>
+                                <Form.Label className="form-label mx-2">Email address</Form.Label>
+                                <Form.Control
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    className="text-white border-0 border-bottom form-control"
+                                    style={{ backgroundColor: '#202020' }}
+                                    required
+                                />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formPesan">
-                                <Form.Label className="mx-2">Message</Form.Label>
-                                <Form.Control as="textarea" rows={3} name="pesan" id="pesan" className="text-white border-0 border-bottom" style={{ backgroundColor: '#202020' }} required/>
+                                <Form.Label className="form-label mx-2">Message</Form.Label>
+                                <Form.Control
+                                    as="textarea"
+                                    rows={3}
+                                    name="pesan"
+                                    id="pesan"
+                                    className="text-white border-0 border-bottom form-control"
+                                    style={{ backgroundColor: '#202020' }}
+                                    required
+                                />
                             </Form.Group>
 
 
