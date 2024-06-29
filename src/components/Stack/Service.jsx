@@ -43,18 +43,23 @@ const certificate = [
         link: "https://drive.google.com/file/d/1Gw-zoViEM9TtnBAPa0u4QKALzl_QzOmJ/view"
     },
     {
-        title: "Sertifikat Paskibra Juara Utama III dalam LKBB Joko tingkir se-JawaTimur",
+        title: "Sertifikat Paskibra Juara II Caraka dalam LKBB Aura Se-JawaTimur (Open)",
         img: imagesSertiv[6],
+        link: "https://drive.google.com/file/d/1CEiD1cSfYE9tDIXEHjmCWSoisJdS9R7_/view"
+    },
+    {
+        title: "Sertifikat Paskibra Juara Utama III dalam LKBB Joko tingkir se-JawaTimur",
+        img: imagesSertiv[7],
         link: "https://drive.google.com/file/d/1OrfbEOkQx0vlVBjPGw7HIG540JFag45A/view"
     },
     {
         title: "Sertifikat Paskibra BEST PBB II dalam LKBB Joko tingkir se-JawaTimur",
-        img: imagesSertiv[7],
+        img: imagesSertiv[8],
         link: "https://drive.google.com/file/d/1PmXMMGUgjJmy6Razq5VMxXa7brj4HDi2/view"
     },
     {
         title: "Sertifikat Paskibra BEST VARFOR Madya 3 dalam LKBB Joko tingkir se-JawaTimur",
-        img: imagesSertiv[8],
+        img: imagesSertiv[9],
         link: "https://drive.google.com/file/d/18I9rura8R_fv4TzCNzoFArKjLumwDKpS/view"
     }
 ]

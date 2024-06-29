@@ -14,10 +14,22 @@ const NavbarComp = () => {
 
     const [changeColor, setChangeColor] = useState(false);
     const changeBackgroundColor = () => {
-        if (window.scrollY > 200) {
-            setChangeColor(true);
-        } else {
-            setChangeColor(false);
+
+        const mediaPhone = window.matchMedia('(max-width:768px)');
+        const mediaDesktop = window.matchMedia('(min-width: 769px)');
+
+        if (mediaPhone.matches) {
+            if (window.scrollY > 200 && window.scrollY < 4100) {
+                setChangeColor(true);
+            } else {
+                setChangeColor(false);
+            }
+        } else if (mediaDesktop.matches) {
+            if (window.scrollY > 200 && window.scrollY < 3300) {
+                setChangeColor(true);
+            } else {
+                setChangeColor(false);
+            }
         }
     }
 
@@ -33,17 +45,21 @@ const NavbarComp = () => {
                 <Container>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="m-auto w-100 d-flex justify-content-evenly align-items-center">
-                            <Nav.Link href="javascript:void(0)" onClick={() => scrollY("home")}>
+                            <Nav.Link href="javascript:void(0)" className="d-flex align-items-center" onClick={() => scrollY("home")}>
                                 <Home />
+                                Home
                             </Nav.Link>
-                            <Nav.Link href="javascript:void(0)" onClick={() => scrollY("about")}>
+                            <Nav.Link href="javascript:void(0)" className="d-flex align-items-center" onClick={() => scrollY("about")}>
                                 <Person />
+                                About
                             </Nav.Link>
-                            <Nav.Link href="javascript:void(0)" onClick={() => scrollY("project")}>
+                            <Nav.Link href="javascript:void(0)" className="d-flex align-items-center" onClick={() => scrollY("project")}>
                                 <WorkHistory />
+                                Project
                             </Nav.Link>
-                            <Nav.Link href="javascript:void(0)" onClick={() => scrollY("contact")}>
+                            <Nav.Link href="javascript:void(0)" className="d-flex align-items-center" onClick={() => scrollY("contact")}>
                                 <ContactSupport />
+                                Contact
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

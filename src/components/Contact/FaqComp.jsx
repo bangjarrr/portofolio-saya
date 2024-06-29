@@ -125,8 +125,6 @@ const FaqComp = () => {
                                 />
                             </Form.Group>
 
-
-
                             <ReCAPTCHA
                                 sitekey="6LdZ_NgpAAAAAB0dvSXNsonB5uAGCTqdMWI_5I-k"
                                 onChange={onChange}

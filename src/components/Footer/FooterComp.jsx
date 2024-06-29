@@ -4,11 +4,11 @@ import { Telegram, Instagram, Facebook, X, LinkedIn, GitHub } from "@mui/icons-m
 
 const FaqComp = () => {
     return (
-        <footer className="bg-dark text-white" style={{paddingBottom: 80}}>
+        <footer className="bg-dark text-white">
             <Container>
                 <Row className="d-flex justify-content-center pt-5">
                     <Col md={8} className="text-center ">
-                        <h5>Follow Us!</h5>
+                        <h5>Follow Me on Social Media</h5>
                         <ul className="list-unstyled d-flex justify-content-evenly align-items-center mt-5 ml-0">
                             <li>
                                 <a href="https://github.com/alfajarjaya">
