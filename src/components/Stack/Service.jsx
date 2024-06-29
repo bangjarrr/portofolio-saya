@@ -1,45 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import AOS from "aos";
-import '../../node_modules/aos/dist/aos.css';
-import '../css/main.css';
-import '../css/service.css';
-import websiteKelas from '../assets/img/project/kelas.png';
-import qrCodeImg from '../assets/img/project/qrcode.png';
-
-// import dasarAI from '../assets/img/certificate/dasarAI.jpg';
+import '../../../node_modules/aos/dist/aos.css';
+import '../../css/main.css';
+import '../../css/service.css';
+import websiteKelas from '../../assets/img/project/kelas.png';
+import qrCodeImg from '../../assets/img/project/qrcode.png';
 
 const importAll = (r) => r.keys().map(r);
-let images = importAll(require.context('../assets/img/skills/', false, /\.(png|jpe?g|svg)$/));
-let imagesSertiv = importAll(require.context('../assets/img/certificate/', false, /\.(png|jpe?g|svg)$/));
-
-// const certificate = [
-//     {
-//         title: "Sertifikat Paskibra Juara II Mula dalam LKBB Sakti Se-JawaTimur",
-//         img: paskib_1,
-//         link: paskib_1
-//     },
-//     {
-//         title: "Sertifikat Paskibra Juara Umum dalam LKBB Patriot Se-JawaTimur",
-//         img: paskib_4,
-//         link: paskib_4
-//     },
-//     {
-//         title: "Sertifikat Paskibra Juara II Utama dalam LKBB Patriot Se-JawaTimur",
-//         img: paskib_3,
-//         link: paskib_3
-//     },
-//     {
-//         title: "Sertifikat Paskibra BEST PBB dalam LKBB Patriot Se-JawaTimur",
-//         img: paskib_2,
-//         link: paskib_2
-//     },
-//     {
-//         title: "Belajar dasar AI",
-//         img: dasarAI,
-//         link: "https://www.dicoding.com/dicodingassets/coursecertificate/d2a743e25f63fef75bfed7e16b8de3d1ad5961af/view"
-//     }
-// ]
+let images = importAll(require.context('../../assets/img/skills/', false, /\.(png|jpe?g|svg)$/));
+let imagesSertiv = importAll(require.context('../../assets/img/certificate/', false, /\.(png|jpe?g|svg)$/));
 
 const certificate = [
     {

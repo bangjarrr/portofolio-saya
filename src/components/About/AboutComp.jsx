@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Aos from "aos";
 import { Container, Row, Col } from 'react-bootstrap';
-import '../css/main.css';
+import '../..//css/main.css';
 
 export default function About() {
 

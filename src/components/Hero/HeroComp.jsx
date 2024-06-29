@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import AOS from "aos";
-import '../../node_modules/aos/dist/aos.css';
+import '../../../node_modules/aos/dist/aos.css';
 
 const HeroComp = () => {
     const scrollToSection = (id) => {

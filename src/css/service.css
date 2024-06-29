@@ -60,7 +60,18 @@
     display: inline-block;
 }
 
-.link:hover .link-img {
-    display: block;
-    cursor: pointer;
+
+@media (min-width: 1200px) {
+    
+    .link:hover .link-img {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 1200px) {
+    .link:hover .link-img {
+        display: none;
+        cursor: pointer;
+    }
 }

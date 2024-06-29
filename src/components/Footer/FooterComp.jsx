@@ -4,7 +4,7 @@ import { Telegram, Instagram, Facebook, X, LinkedIn, GitHub } from "@mui/icons-m
 
 const FaqComp = () => {
     return (
-        <footer className="bg-dark text-white">
+        <footer className="bg-dark text-white" style={{paddingBottom: 80}}>
             <Container>
                 <Row className="d-flex justify-content-center pt-5">
                     <Col md={8} className="text-center ">

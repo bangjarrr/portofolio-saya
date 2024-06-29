@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import emailjs from 'emailjs-com';
 import ReCAPTCHA from "react-google-recaptcha";
-import '../css/main.css';
+import '../..//css/main.css';
 import { Telegram } from "@mui/icons-material";
 
 const FaqComp = () => {
