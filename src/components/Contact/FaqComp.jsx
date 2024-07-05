@@ -35,9 +35,9 @@ const FaqComp = () => {
     const matchMediaPhone = window.matchMedia("(max-width: 768px)");
 
     return (
-        <div className="d-flex flex-column min-vh-100 justify-content-center w-light text-dark" id="contact">
+        <div className="d-flex flex-column justify-content-center w-light text-dark">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#202020" fillOpacity="1" d="M0,256L0,256L96,256L96,224L192,224L192,288L288,288L288,64L384,64L384,224L480,224L480,256L576,256L576,160L672,160L672,256L768,256L768,160L864,160L864,64L960,64L960,96L1056,96L1056,160L1152,160L1152,96L1248,96L1248,288L1344,288L1344,224L1440,224L1440,0L1344,0L1344,0L1248,0L1248,0L1152,0L1152,0L1056,0L1056,0L960,0L960,0L864,0L864,0L768,0L768,0L672,0L672,0L576,0L576,0L480,0L480,0L384,0L384,0L288,0L288,0L192,0L192,0L96,0L96,0L0,0L0,0Z"></path></svg>
-            <Container className="my-5">
+            <Container className="my-5 pt-5" id="contact">
                 <Row className={matchMediaPhone.matches ? "d-flex flex-column align-items-center justify-content-center" : "d-flex flex-row align-items-center justify-content-center"}>
                     <Col md={matchMediaPhone.matches ? 8 : 4} className="h-100 mb-5 pb-5">
                         <div className="container w-100 h-100 card py-4" style={{ backgroundColor: "#404040" }}>
