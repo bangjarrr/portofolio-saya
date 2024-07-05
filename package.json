@@ -17,6 +17,7 @@
     "bootstrap": "^5.3.3",
     "emailjs-com": "^3.2.0",
     "feather-icons": "^4.29.2",
+    "nodemailer": "^6.9.14",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.3.1",
@@ -29,7 +30,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start --HOST=0.0.0.0",
+    "start": "react-scripts start --HOST='0.0.0.0'",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

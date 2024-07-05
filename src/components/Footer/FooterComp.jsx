@@ -5,8 +5,8 @@ import { Telegram, Instagram, Facebook, X, LinkedIn, GitHub } from "@mui/icons-m
 const FaqComp = () => {
     return (
         <footer className="bg-dark text-white">
-            <Container>
-                <Row className="d-flex justify-content-center pt-5">
+            <Container className="pb-3">
+                <Row className="d-flex justify-content-center pt-5 ">
                     <Col md={8} className="text-center ">
                         <h5>Follow Me on Social Media</h5>
                         <ul className="list-unstyled d-flex justify-content-evenly align-items-center mt-5 ml-0">
@@ -47,8 +47,8 @@ const FaqComp = () => {
                 </Row>
                 <hr />
                 <Row>
-                    <Col className="text-center">
-                        <p>&copy; 2023 Alfajjar. All rights reserved.</p>
+                    <Col className="text-center d-flex justify-content-center ">
+                        <p>&copy; 2023 Alfajjar. All rights reserved.</p> <span className="mx-2">-</span> <a href="mailto:info@alfajjar.my.id" className="text-white text-decoration-none"> contact</a>
                     </Col>
                 </Row>
             </Container>

@@ -12,13 +12,11 @@ export default function App() {
     <div>
       <HeroComp />
 
-      {/* Content */}
       <NavbarComp />
       <About />
       <Suspense fallback={<div>Loading services...</div>}>
         <Service />
       </Suspense>
-      {/* Content */}
 
       <FaqComp />
       <FooterComp />

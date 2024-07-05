@@ -6,68 +6,20 @@ import '../../css/main.css';
 import '../../css/service.css';
 import websiteKelas from '../../assets/img/project/kelas.png';
 import qrCodeImg from '../../assets/img/project/qrcode.png';
+import certificateSchool from "./certificateSchool";
+import certificateBootcamp from "./certificateBootcamp";
+
 
 const importAll = (r) => r.keys().map(r);
 let images = importAll(require.context('../../assets/img/skills/', false, /\.(png|jpe?g|svg)$/));
-let imagesSertiv = importAll(require.context('../../assets/img/certificate/', false, /\.(png|jpe?g|svg)$/));
 
-const certificate = [
-    {
-        title: "Belajar dasar AI",
-        img: imagesSertiv[0],
-        link: "https://www.dicoding.com/dicodingassets/coursecertificate/d2a743e25f63fef75bfed7e16b8de3d1ad5961af/view"
-    },
-    {
-        title: "Sertifikat Paskibra Juara II Mula dalam LKBB Sakti Se-JawaTimur",
-        img: imagesSertiv[1],
-        link: "https://drive.google.com/file/d/1sKfDVY9iEcnQuioHRtowTY6LfzKV0cPV/view"
-    },
-    {
-        title: "Sertifikat Paskibra Juara Umum dalam LKBB Patriot Se-JawaTimur",
-        img: imagesSertiv[2],
-        link: "https://drive.google.com/file/d/19XKFH8tB44AAQqeIjTeGKuYTj_9LTGWS/view"
-    },
-    {
-        title: "Sertifikat Paskibra Juara II Utama dalam LKBB Patriot Se-JawaTimur",
-        img: imagesSertiv[3],
-        link: "https://drive.google.com/file/d/1L2baZUdgMH-3_EPI0Nd04AVsXEGl3fX8/view"
-    },
-    {
-        title: "Sertifikat Paskibra BEST PBB dalam LKBB Patriot Se-JawaTimur",
-        img: imagesSertiv[4],
-        link: "https://drive.google.com/file/d/1RnDDkcRVbTPvLHv09bY_tswjjuKt3Zjg/view"
-    },
-    {
-        title: "Sertifikat Paskibra Juara II Mula dalam LKBB Agra Se-Pulau Jawa (Open)",
-        img: imagesSertiv[5],
-        link: "https://drive.google.com/file/d/1Gw-zoViEM9TtnBAPa0u4QKALzl_QzOmJ/view"
-    },
-    {
-        title: "Sertifikat Paskibra Juara II Caraka dalam LKBB Aura Se-JawaTimur (Open)",
-        img: imagesSertiv[6],
-        link: "https://drive.google.com/file/d/1CEiD1cSfYE9tDIXEHjmCWSoisJdS9R7_/view"
-    },
-    {
-        title: "Sertifikat Paskibra Juara Utama III dalam LKBB Joko tingkir se-JawaTimur",
-        img: imagesSertiv[7],
-        link: "https://drive.google.com/file/d/1OrfbEOkQx0vlVBjPGw7HIG540JFag45A/view"
-    },
-    {
-        title: "Sertifikat Paskibra BEST PBB II dalam LKBB Joko tingkir se-JawaTimur",
-        img: imagesSertiv[8],
-        link: "https://drive.google.com/file/d/1PmXMMGUgjJmy6Razq5VMxXa7brj4HDi2/view"
-    },
-    {
-        title: "Sertifikat Paskibra BEST VARFOR Madya 3 dalam LKBB Joko tingkir se-JawaTimur",
-        img: imagesSertiv[9],
-        link: "https://drive.google.com/file/d/18I9rura8R_fv4TzCNzoFArKjLumwDKpS/view"
-    }
-]
 
 export default function Service() {
     const [showAll, setShowAll] = useState(false);
     const [showCertificates, setShowCertificates] = useState(false);
     const [showSkills, setShowSkills] = useState(true);
+    const [showSchool, setShowSchool] = useState(false);
+    const [showBootcamp, setShowBootcamp] = useState(false);
 
     const titleSkills = ['HTML', 'CSS', 'JAVASCRIPT', 'PYTHON', 'MYSQL']
 
@@ -78,11 +30,33 @@ export default function Service() {
     const toggleCertificates = () => {
         setShowSkills(false);
         setShowCertificates(true);
+        setShowSchool(false);
+        setShowBootcamp(false);
+    }
+
+    const toggleShowSchool = () => {
+        if (showSchool) {
+            setShowSchool(false);
+        } else {
+            setShowSchool(true);
+            setShowBootcamp(false);
+        }
+    }
+
+    const toggleShowBootcamp = () => {
+        if (showBootcamp) {
+            setShowBootcamp(false);
+        } else {
+            setShowBootcamp(true);
+            setShowSchool(false);
+        }
     }
 
     const toggleSkills = () => {
         setShowSkills(true);
         setShowCertificates(false);
+        setShowSchool(false);
+        setShowBootcamp(false);
     }
 
     useEffect(() => {
@@ -122,16 +96,50 @@ export default function Service() {
                     <div>
                         {showCertificates && (
                             <div className="my-5 animate__animated animate__fadeInRight">
-                                {certificate.map((certif, index) => (
-                                    <ul className="list-style my-4 text-start" key={index}>
-                                        <li className="list-item">
-                                            <a href={certif.link} target="_blank" rel="noreferrer" className="text-white fs-6 link">
-                                                {certif.title}
-                                                <img src={certif.img} className="link-img" alt={certif.title} />
-                                            </a>
-                                        </li>
-                                    </ul>
-                                ))}
+                                <Row className="justify-content-center">
+                                    <Col className="mt-5 text-start">
+                                        <h1 className="text-menu" onClick={toggleShowSchool}>
+                                            School Certificate
+                                        </h1>
+                                        <div className="border-bottom w-50"></div>
+                                    </Col>
+                                    {showSchool && (
+                                        <Row className="justify-content-center">
+                                            {certificateSchool.map((certif, index) => (
+                                                <ul className="list-style my-4 text-start" key={index}>
+                                                    <li className="list-item">
+                                                        <a href={certif.link} target="_blank" rel="noreferrer" className="text-white fs-6 link">
+                                                            {certif.title}
+                                                            <img src={certif.img} className="link-img" alt={certif.title} />
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            ))}
+                                        </Row>
+                                    )}
+                                </Row>
+                                <Row className="justify-content-center">
+                                    <Col className="mt-5 text-start">
+                                        <h1 className="text-menu" onClick={toggleShowBootcamp}>
+                                            Learning Certificate
+                                        </h1>
+                                        <div className="border-bottom w-50"></div>
+                                    </Col>
+                                    {showBootcamp && (
+                                        <Row className="justify-content-center">
+                                            {certificateBootcamp.map((certif, index) => (
+                                                <ul className="list-style my-4 text-start" key={index}>
+                                                    <li className="list-item">
+                                                        <a href={certif.link} target="_blank" rel="noreferrer" className="text-white fs-6 link">
+                                                            {certif.title}
+                                                            <img src={certif.img} className="link-img" alt={certif.title} />
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            ))}
+                                        </Row>
+                                    )}
+                                </Row>
                             </div>
                         )}
                     </div>
@@ -206,6 +214,6 @@ export default function Service() {
                     </div>
                 </Container>
             </div>
-        </div >
+        </div>
     );
 };
