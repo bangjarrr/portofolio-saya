@@ -47,7 +47,7 @@ const FaqComp = () => {
                                     <input type="radio" id="say-hi" name="radio" className="mx-2" onClick={toggleHay} />
                                     <label htmlFor="say-hi" className="mx-1 cursor-pointer" onClick={toggleHay}>Say Hi !</label>
                                     <input type="radio" id="quote" name="radio" className="mx-2" onClick={toggleQuote} />
-                                    <label htmlFor="quote" className="mx-1 cursor-pointer" onClick={toggleQuote}>Get a Quote</label>
+                                    <label htmlFor="quote" className="mx-1 cursor-pointer" onClick={toggleQuote}>Ask Something</label>
                                 </div>
                                 <h4 className="my-3">Email</h4>
                                 <a href="mailto:directorfajarsite@gmail.com" className="text-decoration-none text-white">
