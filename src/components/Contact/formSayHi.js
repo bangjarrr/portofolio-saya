@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Form, Button } from "react-bootstrap";
 import ReCAPTCHA from "react-google-recaptcha";
 import Swal from 'sweetalert2';
@@ -6,10 +6,31 @@ import emailjs from 'emailjs-com';
 import { RocketLaunch } from "@mui/icons-material";
 import Aos from 'aos';
 
-function FormSayHi() {
+const FormSayHi = () => {
     const formRef = useRef(null);
     const [isVerified, setIsVerified] = useState(false);
     const [recaptchaToken, setRecaptchaToken] = useState("");
+    const [customMessage, setCustomMessage] = useState(false);
+    const [selectMessage, setSelectMessage] = useState(false);
+
+    const options = [
+        { value: '', text: "let's get acquainted" },
+        { value: 'Hello! How are you?', text: 'Hello! How are you?' },
+        { value: 'Hi, I hope you are having a wonderful and surprising day!', text: 'Hi, I hope you are having a wonderful and surprising day!' },
+        { value: 'Hi there! Just wanted to check in and say hello.', text: 'Hi there! Just wanted to check in and say hello.' },
+        { value: 'Hello, I hope your day is smooth and highly productive.', text: 'Hello, I hope your day is smooth and highly productive.' },
+    ];
+
+    const customMessageToggle = () => {
+        if (customMessage && selectMessage) {
+            setSelectMessage(true);
+            setCustomMessage(false);
+        } else {
+
+            setCustomMessage(true);
+            setSelectMessage(false);
+        }
+    }
 
     const onChange = (value) => {
         if (value) {
@@ -76,8 +97,12 @@ function FormSayHi() {
         }
     };
 
+    const mediaPhone = window.matchMedia('(max-width:768px)');
+
+
     useEffect(() => {
         Aos.init();
+        setSelectMessage(true);
     });
 
     return (
@@ -107,25 +132,83 @@ function FormSayHi() {
                     />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="pesan">
-                    <Form.Label className="text-dark form-label mx-2">Message</Form.Label>
-                    <Form.Control
-                        as="textarea"
-                        rows={3}
-                        name="pesan"
-                        id="pesan"
-                        className="text-white border-0 border-bottom form-control"
-                        style={{ backgroundColor: '#404040' }}
-                        required
-                    />
-                </Form.Group>
+                {customMessage ? (
+                    <Form.Group className="mb-3" controlId="pesan">
+                        <Form.Label className="text-dark form-label mx-2">Message</Form.Label>
+                        <Form.Control
+                            as="textarea"
+                            rows={3}
+                            name="pesan"
+                            id="pesan"
+                            className="text-white border-0 border-bottom form-control"
+                            style={{ backgroundColor: '#404040' }}
+                            required
+                        />
+                        <div className={mediaPhone.matches ? "d-block form-check form-switch mx-2 my-3" : "d-none"}>
+                            <input
+                                className="form-check-input"
+                                type="checkbox"
+                                id="customMessage"
+                                name="customMessage"
+                                checked={customMessage}
+                                onChange={customMessageToggle}
+                            />
+                            <label className="form-check-label text-dark" htmlFor="customMessage">
+                                Custom Message ?
+                            </label>
+                        </div>
+                    </Form.Group>
+                ) : (
 
-                <ReCAPTCHA
-                    sitekey="6LdZ_NgpAAAAAB0dvSXNsonB5uAGCTqdMWI_5I-k"
-                    onChange={onChange}
-                    theme="dark"
-                    className="mx-2"
-                />
+                    <Form.Group className="mb-3" controlId="pesan">
+                        <Form.Label className="text-dark form-label mx-2">Message</Form.Label>
+                        <Form.Select className='text-white border-0 border-bottom form-control' style={{ backgroundColor: "#404040" }} name='pesan' id='pesan' required>
+                            {options.map((option) => {
+                                return (
+                                    <option key={option.value} value={option.value} className='mx-1'>
+                                        {option.text}
+                                    </option>
+                                );
+                            })}
+                        </Form.Select>
+                        <div className={mediaPhone.matches ? "d-block form-check form-switch mx-2 my-3" : "d-none"}>
+                            <input
+                                className="form-check-input"
+                                type="checkbox"
+                                id="customMessage"
+                                name="customMessage"
+                                checked={customMessage}
+                                onChange={customMessageToggle}
+                            />
+                            <label className="form-check-label text-dark" htmlFor="customMessage">
+                                Custom Message ?
+                            </label>
+                        </div>
+                    </Form.Group>
+                )}
+
+                <div className="d-flex align-items-center">
+                    <ReCAPTCHA
+                        sitekey="6LdZ_NgpAAAAAB0dvSXNsonB5uAGCTqdMWI_5I-k"
+                        onChange={onChange}
+                        theme="dark"
+                        className="mx-2"
+                    />
+
+                    <div className={mediaPhone.matches ? "d-none" : "d-block form-check form-switch mx-2"}>
+                        <input
+                            className="form-check-input"
+                            type="checkbox"
+                            id="customMessage"
+                            name="customMessage"
+                            checked={customMessage}
+                            onChange={customMessageToggle}
+                        />
+                        <label className="form-check-label text-dark" htmlFor="customMessage">
+                            Custom Message ?
+                        </label>
+                    </div>
+                </div>
 
                 <Button variant="warning" type="submit" className="my-3 mx-2 px-5 py-2 d-flex align-items-center">
                     Send Now !

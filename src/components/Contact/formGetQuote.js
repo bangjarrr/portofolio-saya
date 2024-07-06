@@ -124,7 +124,7 @@ function FormGetQuote() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="quoteMessage">
-                    <Form.Label className="text-dark form-label mx-2">Quote Message</Form.Label>
+                    <Form.Label className="text-dark form-label mx-2">Write your Question</Form.Label>
                     <Form.Control
                         as="textarea"
                         rows={3}
