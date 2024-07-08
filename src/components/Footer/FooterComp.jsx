@@ -48,7 +48,7 @@ const FaqComp = () => {
                 <hr />
                 <Row>
                     <Col className="text-center d-flex justify-content-center ">
-                        <p>&copy; 2023 Alfajjar. All rights reserved.</p> <span className="mx-2">-</span> <a href="mailto:info@alfajjar.my.id" className="text-white text-decoration-none"> contact</a>
+                        <p>&copy; 2023 Alfajjar. All rights reserved.</p> <span className="mx-2">-</span> <a href="mailto:directorfajarsite@gmail.com" className="text-white text-decoration-none"> contact</a>
                     </Col>
                 </Row>
             </Container>

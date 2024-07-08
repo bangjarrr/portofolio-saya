@@ -17,8 +17,14 @@ export default function About() {
     }
 
     const toggleAboutRight = () => {
-        setShowLeftAbout(false);
-        setShowRightAbout(true);
+        if(showRightAbout) {
+            setShowRightAbout(false);
+            setShowRightAbout(true);
+        } else {
+
+            setShowLeftAbout(false);
+            setShowRightAbout(true);
+        }
     }
 
     const toggleAboutLeft = () => {

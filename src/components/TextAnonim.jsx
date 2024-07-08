@@ -80,7 +80,7 @@ function TextAnonim() {
                                 <div className="w-100 comment p-5">
                                     {messages.map((msg, index) => (
                                         <div key={index} className='border comment-body p-3 mx-5 my-2 bg-dark text-white d-flex align-items-center'>
-                                            <img src={usersIcons} alt="icons" />
+                                            <img src={usersIcons} alt="icons" width={10}/>
                                             <p className='text-white m-0 mx-3'>{msg}</p>
                                         </div>
                                     ))}
