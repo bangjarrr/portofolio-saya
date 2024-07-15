@@ -52,11 +52,10 @@ const FormSayHi = () => {
 
         try {
             emailjs.init('yOnzflsGxmHZpMjlw');
-            const nama = formRef.current.elements['nama'].value;
             const email = formRef.current.elements['email'].value;
             const pesan = formRef.current.elements['pesan'].value;
 
-            if (!nama || !email || !pesan) {
+            if (!email || !pesan) {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
@@ -67,7 +66,7 @@ const FormSayHi = () => {
 
             await emailjs.send('iINO!l(q17BM1ELmgPU8dGrA', 'DLKrw$R$VVy$2T9_t9Q5epL=', {
                 mail: email,
-                name: nama,
+                name: email,
                 message: pesan,
                 phone: 'this is a form Say Hi :D',
                 'g-recaptcha-response': recaptchaToken,
@@ -108,18 +107,6 @@ const FormSayHi = () => {
     return (
         <>
             <Form ref={formRef} className="text-white w-100" onSubmit={sendToEmail} id="my-form" data-aos="fade-up">
-                <Form.Group className="mb-3" controlId="nama">
-                    <Form.Label className="text-dark form-label mx-2">Enter Name</Form.Label>
-                    <Form.Control
-                        type="text"
-                        name="nama"
-                        id="nama"
-                        className="text-white border-0 border-bottom form-control"
-                        style={{ backgroundColor: '#404040' }}
-                        required
-                    />
-                </Form.Group>
-
                 <Form.Group className="mb-3" controlId="email">
                     <Form.Label className="text-dark form-label mx-2">Email address</Form.Label>
                     <Form.Control

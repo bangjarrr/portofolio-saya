@@ -81,10 +81,10 @@ export default function About() {
                 )}
 
                 <div className="d-flex justify-content-evenly align-items-center mt-5">
-                    <Button variant="primary" className="px-5" onClick={toggleAboutLeft}>
+                    <Button variant="outline-dark" className="px-5 " onClick={toggleAboutLeft}>
                         <ChevronLeft />
                     </Button>
-                    <Button variant="primary" className="px-5" onClick={toggleAboutRight}>
+                    <Button variant="outline-dark" className="px-5" onClick={toggleAboutRight}>
                         <ChevronRight />
                     </Button>
                 </div>

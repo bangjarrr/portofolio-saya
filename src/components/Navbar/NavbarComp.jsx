@@ -19,11 +19,11 @@ const NavbarComp = () => {
         const mediaDesktop = window.matchMedia('(min-width: 769px)');
 
         if (mediaPhone.matches) {
-            window.scrollY > 200 && window.scrollY < 4500 ?
+            window.scrollY > 200 && window.scrollY < 4300 ?
                 setChangeColor(true) : setChangeColor(false)
 
         } else if (mediaDesktop.matches) {
-            window.scrollY > 200 && window.scrollY < 4500 ?
+            window.scrollY > 200 && window.scrollY < 4400 ?
                 setChangeColor(true) : setChangeColor(false)
 
         }
