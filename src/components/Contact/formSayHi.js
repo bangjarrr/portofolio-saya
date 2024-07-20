@@ -102,7 +102,7 @@ const FormSayHi = () => {
     useEffect(() => {
         Aos.init();
         setSelectMessage(true);
-    });
+    }, []);
 
     return (
         <>

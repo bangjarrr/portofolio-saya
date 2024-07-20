@@ -41,19 +41,19 @@ const NavbarComp = () => {
                     <Container>
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="m-auto w-100 d-flex justify-content-evenly align-items-center">
-                                <Nav.Link href="javascript:void(0)" className="d-flex align-items-center" onClick={() => scrollY("home")}>
+                                <Nav.Link href="#" className="d-flex align-items-center" onClick={() => scrollY("home")}>
                                     <Home />
                                     Home
                                 </Nav.Link>
-                                <Nav.Link href="javascript:void(0)" className="d-flex align-items-center" onClick={() => scrollY("about")}>
+                                <Nav.Link href="#" className="d-flex align-items-center" onClick={() => scrollY("about")}>
                                     <Person />
                                     About
                                 </Nav.Link>
-                                <Nav.Link href="javascript:void(0)" className="d-flex align-items-center" onClick={() => scrollY("project")}>
+                                <Nav.Link href="#" className="d-flex align-items-center" onClick={() => scrollY("project")}>
                                     <WorkHistory />
                                     Project
                                 </Nav.Link>
-                                <Nav.Link href="javascript:void(0)" className="d-flex align-items-center" onClick={() => scrollY("contact")}>
+                                <Nav.Link href="#" className="d-flex align-items-center" onClick={() => scrollY("contact")}>
                                     <ContactSupport />
                                     Contact
                                 </Nav.Link>

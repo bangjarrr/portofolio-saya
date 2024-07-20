@@ -53,8 +53,8 @@ export default function About() {
                             <Col md={8} className="text-start" data-aos="fade-up">
                                 <p>
                                     Hi, I'm Mochammad Alfajjar, usually called Fajar. I'm from East Java, Indonesia 🇮🇩. I am a vocational high school student, majoring in computer and network engineering. I have an interest in the world of programming. I actively participate in training and learning communities. I also managed to get a competency certificate.  I also have a lot of experience from the Paskibra so getting a certificate is quite proud for me
-                                    <a href="javascript:void(0)" className="text-primary bg-transparent border-bottom-black border-0" onClick={() => scrollY('service')}> see my certificate</a>. To get to know me better, you
-                                    can connect on my <a href="https://t.me/Njir_18" target="_blank" rel="noreferrer" className="text-primary">Telegram</a> or <a href="https://www.instagram.com/bang_jarrrz/" target="_blank" rel="noreferrer" className="text-primary">Instagram</a> you can also contact me via this page <a href="javascript:void(0)" className="text-primary bg-transparent border-0" onClick={() => scrollY('contact')}>Contact</a>.
+                                    <a href="#" className="text-primary bg-transparent border-bottom-black border-0" onClick={() => scrollY('service')}> see my certificate</a>. To get to know me better, you
+                                    can connect on my <a href="https://t.me/Njir_18" target="_blank" rel="noreferrer" className="text-primary">Telegram</a> or <a href="https://www.instagram.com/bang_jarrrz/" target="_blank" rel="noreferrer" className="text-primary">Instagram</a> you can also contact me via this page <a href="#" className="text-primary bg-transparent border-0" onClick={() => scrollY('contact')}>Contact</a>.
                                 </p>
                             </Col>
                         </Row>
