@@ -4,10 +4,9 @@ import AOS from "aos";
 import '../../../node_modules/aos/dist/aos.css';
 import '../../css/main.css';
 import '../../css/service.css';
-import websiteKelas from '../../assets/img/project/kelas.png';
-import qrCodeImg from '../../assets/img/project/qrcode.png';
 import certificateSchool from "./certificateSchool";
 import certificateBootcamp from "./certificateBootcamp";
+import listProject from "./project/listProject";
 
 
 const importAll = (r) => r.keys().map(r);
@@ -153,58 +152,32 @@ export default function Service() {
                             </Col>
                         </Row>
                         <Row className="d-flex justify-content-center mb-5 align-items-center" style={{ height: '100%' }}>
-                            <Col md={6}>
-                                <div className="project rounded-3">
-                                    <iframe className="img-fluid rounded-3" width="100%" height="315" src="https://www.youtube.com/embed/QofPahiYfMo?si=RSePFEM7W1Pg5VsT" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                                    <div className="mx-3 my-2">
-                                        <p>Website Kedai Kopi: Desain yang responsif dan elegan hanya dengan HTML, CSS, dan Javascript, menawarkan pengalaman pengguna yang interaktif dan memikat.</p>
-                                        <a href="https://kedai-kopi-kita.netlify.app/halaman-utama/" target="_blank" rel="noreferrer" className="text-warning text-decoration-none w-100 p-2 project-link d-block text-center rounded-3">
-                                            Show Demo
-                                        </a>
+                            {listProject.slice(0, 3).map((project, index) => {
+                                return (
+                                    <Col md={4} key={index}>
+                                        <div className="project rounded-3">
+                                            <iframe className="img-fluid rounded-3" width="100%" height="315" src={project.source} title={project.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                                            <div className="mx-3 my-2">
+                                                <h5 className="text-normal">{project.title}</h5>
+                                                <p>{project.description}</p>
+                                                <a href={project.link} target="_blank" rel="noreferrer" className="text-warning text-decoration-none w-100 p-2 project-link d-block text-center rounded-3">Show Demo</a>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                )
+                            })}
+                            {showAll && listProject.slice(3).map((project, index) => (
+                                <Col md={4} key={index}>
+                                    <div className="project rounded-3">
+                                        <img src={project.source} alt={project.title} width={'100%'} height={315} className="img-fluid rounded-3" />
+                                        <div className="mx-3 my-2">
+                                            <h5 className="text-normal">{project.title}</h5>
+                                            <p>{project.description}</p>
+                                            <a href={project.link} target="_blank" rel="noreferrer" className="text-warning text-decoration-none w-100 p-2 project-link d-block text-center rounded-3">Show Demo</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </Col>
-                            <Col md={6}>
-                                <div className="project rounded-3">
-                                    <iframe className="img-fluid rounded-3" width="100%" height="315" src="https://www.youtube.com/embed/os4mnM_xepo?si=TQ-L5KLuXko4aebw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                    <div className="mx-3 my-2">
-                                        <p>Manajemen Perpustakaan: Menggunakan Python, Flask, MySQL, HTML, CSS, JS, SweetAlert, EmailJS, dan OpenCV untuk solusi yang terintegrasi dan responsif.</p>
-                                        <a href="https://manajemen-perpustakaan.vercel.app/" target="_blank" rel="noreferrer" className="text-warning text-decoration-none w-100 p-2 project-link d-block text-center rounded-3">Show Demo</a>
-                                    </div>
-                                </div>
-                            </Col>
-                            {showAll && (
-                                <Row>
-                                    <Col md={6}>
-                                        <div className="project rounded-3">
-                                            <iframe className="img-fluid rounded-3" width="100%" height="315" src="https://www.youtube.com/embed/ihBd1PjKnLY?si=1yMyr9D-7YzzQvV4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                                            <div className="mx-3 my-2">
-                                                <p>Website untuk menerjemahkan nama-nama hewan dari bahasa Inggris, Jepang, dan Indonesia, semuanya dibuat menggunakan Python.</p>
-                                                <a href="https://translate-python.vercel.app/" target="_blank" rel="noreferrer" className="text-warning text-decoration-none w-100 p-2 project-link d-block text-center rounded-3">Show Demo</a>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                    <Col md={6}>
-                                        <div className="project rounded-3">
-                                            <img src={websiteKelas} alt="https://tkj2skanesa.vercel.app" width={'100%'} height={315} className="img-fluid rounded-3" />
-                                            <div className="mx-3 my-2">
-                                                <p>Membangun website kelas yang berfungsi sebagai pusat gallery beserta kenagan bagi teman-teman, berisikan tentang gallery class, blog, dll.</p>
-                                                <a href="https://tkj2skanesa.vercel.app" target="_blank" rel="noreferrer" className="text-warning text-decoration-none w-100 p-2 project-link d-block text-center rounded-3">Show Demo</a>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                    <Col md={6}>
-                                        <div className="project rounded-3">
-                                            <img src={qrCodeImg} alt="https://tkj2skanesa.vercel.app" width={'100%'} height={315} className="img-fluid rounded-3" />
-                                            <div className="mx-3 my-2">
-                                                <p>This project is a simple application to generate QR (Quick Response) codes from user-inputted text. QR Code is a type of two-dimensional barcode that can be quickly read by devices such as smartphone cameras..</p>
-                                                <a href="https://qrcodegeneratorbyfajar.vercel.app/" target="_blank" rel="noreferrer" className="text-warning text-decoration-none w-100 p-2 project-link d-block text-center rounded-3">Show Demo</a>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                </Row>
-                            )}
-
+                                </Col>
+                            ))}
                             <div className="justify-content-center text-center mt-5 mb-5">
                                 <Button variant="outline-warning" onClick={toggleShowAll}>
                                     {showAll ? "Close" : "Show All Project"}

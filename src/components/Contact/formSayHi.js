@@ -51,7 +51,7 @@ const FormSayHi = () => {
         }
 
         try {
-            emailjs.init('yOnzflsGxmHZpMjlw');
+            emailjs.init('y4N4kt-pGfxY2mcDW');
             const email = formRef.current.elements['email'].value;
             const pesan = formRef.current.elements['pesan'].value;
 
@@ -64,7 +64,7 @@ const FormSayHi = () => {
                 return;
             }
 
-            await emailjs.send('iINO!l(q17BM1ELmgPU8dGrA', 'DLKrw$R$VVy$2T9_t9Q5epL=', {
+            await emailjs.send('service_6bc2wvm', 'template_s5jfll9', {
                 mail: email,
                 name: email,
                 message: pesan,
@@ -108,7 +108,7 @@ const FormSayHi = () => {
         <>
             <Form ref={formRef} className="text-white w-100" onSubmit={sendToEmail} id="my-form" data-aos="fade-up">
                 <Form.Group className="mb-3" controlId="email">
-                    <Form.Label className="text-dark form-label mx-2">Email address</Form.Label>
+                    <Form.Label className="text-white-50 form-label mx-2">Email address</Form.Label>
                     <Form.Control
                         type="email"
                         name="email"
@@ -121,7 +121,7 @@ const FormSayHi = () => {
 
                 {customMessage ? (
                     <Form.Group className="mb-3" controlId="pesan">
-                        <Form.Label className="text-dark form-label mx-2">Message</Form.Label>
+                        <Form.Label className="text-white-50 form-label mx-2">Message</Form.Label>
                         <Form.Control
                             as="textarea"
                             rows={3}
@@ -148,15 +148,14 @@ const FormSayHi = () => {
                 ) : (
 
                     <Form.Group className="mb-3" controlId="pesan">
-                        <Form.Label className="text-dark form-label mx-2">Message</Form.Label>
+                        <Form.Label className="text-white-50 form-label mx-2">Message</Form.Label>
                         <Form.Select className='text-white border-0 border-bottom form-control' style={{ backgroundColor: "#404040" }} name='pesan' id='pesan' required>
-                            {options.map((option) => {
-                                return (
+                            {options.map((option) => (
                                     <option key={option.value} value={option.value} className='mx-1'>
                                         {option.text}
                                     </option>
-                                );
-                            })}
+                                )
+                            )}
                         </Form.Select>
                         <div className={mediaPhone.matches ? "d-block form-check form-switch mx-2 my-3" : "d-none"}>
                             <input
@@ -191,7 +190,7 @@ const FormSayHi = () => {
                             checked={customMessage}
                             onChange={customMessageToggle}
                         />
-                        <label className="form-check-label text-dark" htmlFor="customMessage">
+                        <label className="form-check-label text-white-50" htmlFor="customMessage">
                             Custom Message ?
                         </label>
                     </div>

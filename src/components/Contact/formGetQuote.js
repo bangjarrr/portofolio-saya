@@ -30,7 +30,7 @@ function FormGetQuote() {
         }
 
         try {
-            emailjs.init('yOnzflsGxmHZpMjlw');
+            emailjs.init('y4N4kt-pGfxY2mcDW');
             const nama = formRef.current.elements['nama'].value;
             const phone = formRef.current.elements['phone'].value;
             const email = formRef.current.elements['email'].value;
@@ -45,7 +45,7 @@ function FormGetQuote() {
                 return;
             }
 
-            await emailjs.send('iINO!l(q17BM1ELmgPU8dGrA', 'DLKrw$R$VVy$2T9_t9Q5epL=', {
+            await emailjs.send('service_6bc2wvm', 'template_s5jfll9', {
                 name: nama,
                 mail: email,
                 message: pesan,
@@ -88,7 +88,7 @@ function FormGetQuote() {
             <Form ref={formRef} className="text-white w-100" onSubmit={sendToEmail} id="my-form" data-aos='fade-up'>
                 <div className="d-flex justify-content-between w-100">
                     <Form.Group className="mb-3 w-50 mx-1" controlId="nama">
-                        <Form.Label className="text-dark form-label mx-2">Enter Name</Form.Label>
+                        <Form.Label className="text-white-50 form-label mx-2">Enter Name</Form.Label>
                         <Form.Control
                             type="text"
                             name="nama"
@@ -99,7 +99,7 @@ function FormGetQuote() {
                         />
                     </Form.Group>
                     <Form.Group className="mb-3 w-50 mx-1" controlId="phone">
-                        <Form.Label className="text-dark form-label mx-2">Enter Your Phone</Form.Label>
+                        <Form.Label className="text-white-50 form-label mx-2">Enter Your Phone</Form.Label>
                         <Form.Control
                             type="number"
                             name="phone"
@@ -112,7 +112,7 @@ function FormGetQuote() {
                 </div>
 
                 <Form.Group className="mb-3" controlId="email">
-                    <Form.Label className="text-dark form-label mx-2">Email address</Form.Label>
+                    <Form.Label className="text-white-50 form-label mx-2">Email address</Form.Label>
                     <Form.Control
                         type="email"
                         name="email"
@@ -124,7 +124,7 @@ function FormGetQuote() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="quoteMessage">
-                    <Form.Label className="text-dark form-label mx-2">Write your Question</Form.Label>
+                    <Form.Label className="text-white-50 form-label mx-2">Write your Question</Form.Label>
                     <Form.Control
                         as="textarea"
                         rows={3}
@@ -135,6 +135,7 @@ function FormGetQuote() {
                         required
                     />
                 </Form.Group>
+
 
                 <ReCAPTCHA
                     sitekey="6LdZ_NgpAAAAAB0dvSXNsonB5uAGCTqdMWI_5I-k"
